@@ -1,0 +1,19 @@
+.home-container {
+    background: linear-gradient(#FFFFFF, #FFAE0F, #FFAE0F, #FFAE0F, #FFAE0F, #FFAE0F, #FFFFFF);
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    padding: 20px;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.home-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw; 
+    object-fit: fill;
+    image-rendering: auto;
+}
