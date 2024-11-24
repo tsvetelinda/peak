@@ -1,11 +1,11 @@
 .home-container {
-    background: linear-gradient(#FFFFFF, #FFAE0F, #FFAE0F, #FFAE0F, #FFAE0F, #FFAE0F, #FFFFFF);
+    background: linear-gradient(#FFF1D5, #FFAE0F, #FFAE0F, #FFAE0F, #FFAE0F, #FFAE0F, #FFF1D5);
     position: absolute;
     top: 0;
     z-index: -1;
     padding: 20px;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     overflow: hidden;
 }
 

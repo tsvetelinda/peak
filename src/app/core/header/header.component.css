@@ -55,10 +55,10 @@
     align-items: center;
 }
 
-#log-in-btn {
+.auth-btn {
     padding: 10px 25px;
     background-color: #800080;
-    color: #fff;
+    color: #FFF1D5;
     border: none;
     border-radius: 30px;
     font-family: "Comfortaa", sans-serif;
@@ -71,10 +71,14 @@
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
-#log-in-btn:hover {
+.auth-btn:hover {
     background-color: #FFF1D5;
     border: 2px solid #800080;
     color: #800080;
     transform: scale(1.2);
     text-shadow: none;
+}
+
+#log-in {
+    padding: 10px 50px;
 }
