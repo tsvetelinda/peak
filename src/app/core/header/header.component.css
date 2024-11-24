@@ -35,9 +35,9 @@
 
 .mountain-option h3 {
     color: #800080;
-    /*font-family: 'Simbal Regular', sans-serif;*/
     font-family: "Comfortaa", sans-serif;
     font-size: 1.5rem;
+    font-weight: 700;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
     transition: transform 0.5s ease;
 }
@@ -61,7 +61,7 @@
     color: #fff;
     border: none;
     border-radius: 30px;
-    font-family: 'Simbal Regular', sans-serif;
+    font-family: "Comfortaa", sans-serif;
     font-weight: bold;
     font-size: 1rem;
     cursor: pointer;
