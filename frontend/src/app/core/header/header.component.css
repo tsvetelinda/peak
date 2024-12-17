@@ -1,0 +1,54 @@
+.nav-menu {
+    width: 100%;
+    display: flex;
+    padding: 20px;
+    position: absolute;
+    z-index: 10;
+}
+
+.nav-left,
+.nav-right {
+    width: 50%;
+    display: flex;
+    gap: 40px;
+}
+
+.nav-left {
+    padding-right: 100px;
+    justify-content: right;
+}
+
+.nav-right {
+    padding-left: 150px;
+    justify-content: left;
+}
+
+.mountain-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.mountain-option g {
+    transition: fill 0.5s ease-in-out;
+}
+
+.mountain-option h3 {
+    color: #800080;
+    font-family: "Neucha", cursive; 
+    font-size: 2rem;
+    font-weight: 600;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease;
+}
+
+.mountain-option:hover g {
+    fill: #800080;
+}
+
+.mountain-option:hover h3 {
+    transform: scale(1.2);
+    color: #400040;
+}
