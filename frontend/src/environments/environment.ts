@@ -1,3 +1,3 @@
 export const environment = {
-    apiUrl: 'https://peak-app-wuf4.onrender.com',
+    apiUrl: 'https://peak-v6i9.onrender.com',
 };
