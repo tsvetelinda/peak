@@ -1,5 +1,7 @@
 # Peak App
 
+**Disclaimer:** Please note that when visiting [this URL](https://tsvetelinda.github.io/peak/), it may take up to a minute for all resources to fully load.
+
 **Peak** is a personal project developed in collaboration with a graphic designer friend. The application is an Angular-based web app with an Express and Node.js backend, utilizing MongoDB as the database. The project aims to showcase Bulgaria's breathtaking mountains and provide a platform for skiing enthusiasts to explore and plan their adventures.
 
 ## Features
