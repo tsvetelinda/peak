@@ -36,19 +36,19 @@
 }
 
 .mountain-option h3 {
-    color: #800080;
-    font-family: "Neucha", cursive; 
+    color: #0d14a1;
+    font-family: "Sofia Sans", serif;
     font-size: 2rem;
-    font-weight: 600;
+    font-weight: 800;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
     transition: transform 0.5s ease;
 }
 
 .mountain-option:hover g {
-    fill: #800080;
+    fill: #F58A07;
 }
 
 .mountain-option:hover h3 {
     transform: scale(1.2);
-    color: #400040;
+    color: #131DE8;
 }
