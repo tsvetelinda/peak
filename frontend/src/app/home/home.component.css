@@ -2,8 +2,22 @@
     position: relative;
     width: 100vw;
     min-height: 100vh;
-    background: linear-gradient(to bottom, #beb5eb 0%, #e3dcf5 25%, #fff 50%, #ffeecd 75%, #FFF1D5 100%);
     overflow: hidden;
+}
+
+.home-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom,  
+        #FFFFFF 0%, 
+        #dac6ff 30%,  
+        #FFB647 50%,
+        #B892FF 90%);
+    z-index: -1;
 }
 
 .img-container {
@@ -21,26 +35,39 @@
     position: absolute;
     top: 155px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-160%);
     padding: 40px;
     display: flex;
     flex-direction: column;
     gap: 10px;
     align-items: center;
-    font-family: "Neucha", cursive;
+    font-family: "Sofia Sans", serif;
+    transition: transform 0.8s ease-in-out;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.welcome-msg:hover {
+    transform: translateX(-50%);
+}
+
+.welcome-msg:active {
+    transition: none;
+}
+
+.welcome-msg.hovered {
+    pointer-events: none;
 }
 
 .auth-prompt {
     font-size: 1.5rem;
     text-align: center;
-    color: #400040;
+    color: #0D14A1;
     font-weight: 700;
 }
 
 .larger {
     font-size: 2.3rem;
-    color: #800080;
+    color: #F58A07;
     text-transform: uppercase;
     text-shadow: 1px 1px 1px rgba(79, 78, 78, 0.7);
 }
@@ -53,10 +80,10 @@
 
 .buttons-container button {
     padding: 10px 25px;
-    background-color: #400040;
+    background-color: #0D14A1;
     color: #FFF1D5;
     border: none;
-    font-family: "Neucha", cursive;  
+    font-family: "Sofia Sans", serif;
     font-size: 1.3rem;
     font-weight: 500;
     cursor: pointer;
@@ -68,8 +95,8 @@
 
 .buttons-container button:hover {
     background-color: #FFF1D5;
-    border: 2px solid #400040;
-    color: #400040;
+    border: 2px solid #0D14A1;
+    color: #0D14A1;
     transform: scale(1.2);
     text-shadow: none;
 }
@@ -87,13 +114,13 @@
 }
 
 .icon-container p {
-    color: #400040;
+    color: #0D14A1;
     font-size: 1.5rem;
     font-weight: 700;
 }
 
 .icon-container:hover {
-    background-color: #400040;
+    background-color: #0D14A1;
     box-shadow: rgba(50, 50, 93, 0.8) 0px 13px 27px -5px, rgba(0, 0, 0, 0.9) 0px 8px 16px -8px;
     scale: 1.1;
 }

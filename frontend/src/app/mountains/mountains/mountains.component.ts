@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Mountain } from '../../types/mountain';
 import { ApiService } from '../../api.service';
-import { animate, keyframes, state, style, transition, trigger } from '@angular/animations';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-mountains',
