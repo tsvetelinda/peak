@@ -12,7 +12,7 @@ connectDB();
 const app = express();
 
 const corsOptions = {
-    origin: 'https://tsvetelinda.github.io', 
+    origin: ['https://tsvetelinda.github.io', 'http://localhost:4200'],
     credentials: true,
 };
 
