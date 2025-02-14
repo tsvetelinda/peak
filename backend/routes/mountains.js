@@ -3,7 +3,7 @@ const Mountain = require('../models/Mountain');
 
 const router = express.Router();
 
-router.get('/mountains', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const mountains = await Mountain.find();
     res.json(mountains);
@@ -12,7 +12,7 @@ router.get('/mountains', async (req, res) => {
   }
 });
 
-router.post('/mountains', async (req, res) => {
+router.post('/', async (req, res) => {
   const mountain = new Mountain(req.body);
   try {
     const newMountain = await mountain.save();
@@ -22,7 +22,7 @@ router.post('/mountains', async (req, res) => {
   }
 });
 
-router.delete('/mountains/:id', async (req, res) => {
+router.delete('/:id', async (req, res) => {
   try {
     const mountain = await Mountain.findByIdAndDelete(req.params.id);
     if (!mountain) {
@@ -34,7 +34,7 @@ router.delete('/mountains/:id', async (req, res) => {
   }
 });
 
-router.put('/mountains/:id', async (req, res) => {
+router.put('/:id', async (req, res) => {
   try {
     const updatedMountain = await Mountain.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
