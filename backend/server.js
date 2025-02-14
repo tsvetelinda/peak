@@ -4,15 +4,23 @@ const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db');
 const mountainRoutes = require('./routes/mountains');
+const userRoutes = require('./routes/users');
 
 dotenv.config();
 connectDB();
 
 const app = express();
-app.use(cors());
+
+const corsOptions = {
+    origin: 'https://tsvetelinda.github.io', 
+    credentials: true,
+};
+
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
-app.use('/', mountainRoutes);
+app.use('/mountains', mountainRoutes);
+app.use('/users', userRoutes);
 
 const PORT = process.env.PORT;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
