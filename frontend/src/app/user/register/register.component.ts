@@ -35,7 +35,7 @@ export class RegisterComponent {
       next: () => {
         this.router.navigate(['home']);
       },
-      error: () => {
+      error: (err) => {
         this.form.reset();
       }
     });
