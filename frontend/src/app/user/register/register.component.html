@@ -1,1 +1,46 @@
-<p>register works!</p>
+<form [formGroup]="form" (ngSubmit)="register()">
+    <label for="firstName">Име</label>
+    <input type="text" name="firstName" id="firstName" formControlName="firstName">
+
+    <label for="lastName">Фамилия</label>
+    <input type="text" name="lastName" id="lastName" formControlName="lastName">
+
+    <label for="email">Имейл</label>
+    <input type="email" name="email" id="email" formControlName="email">
+
+    <label for="password">Парола</label>
+    <input type="password" name="password" id="password" formControlName="password">
+
+    <label for="rePassword">Повторете паролата</label>
+    <input type="password" name="rePassword" id="rePassword" formControlName="rePassword">
+
+    <label for="birthDate">Дата на раждане</label>
+    <input type="date" name="birthDate" id="birthDate" formControlName="birthDate">
+
+    <label for="phone">Телефонен номер</label>
+    <input type="text" name="phone" id="phone" formControlName="phone">
+    
+    <label for="sport">Вие сте:</label>
+    <select id="sport" name="sport" formControlName="sport">
+        <option value="Skier">Скиор</option>
+        <option value="Snowboarder">Сноубордист</option>
+        <option value="Both">И двете</option>
+    </select>
+
+    <label for="skillLevel">Ниво на уменията</label>
+    <div>
+        <input type="radio" id="beginner" name="skillLevel" value="Beginner" formControlName="skillLevel">
+        <label for="beginner">Начинаещ</label>
+    </div>
+    <div>
+        <input type="radio" id="intermediate" name="skillLevel" value="Intermediate" formControlName="skillLevel">
+        <label for="intermediate">Средно-напреднал</label>
+    </div>
+    <div>
+        <input type="radio" id="advanced" name="skillLevel" value="Advanced" formControlName="skillLevel">
+        <label for="advanced">Напреднал</label>
+    </div>
+
+    <button [disabled]="form.invalid">Регистрирай ме!</button>
+</form>
+
