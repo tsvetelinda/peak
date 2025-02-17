@@ -1,9 +1,13 @@
-<form [formGroup]="form" (ngSubmit)="login()">
-    <label for="email">Имейл</label>
-    <input type="email" name="email" id="email" formControlName="email">
-
-    <label for="password">Парола</label>
-    <input type="password" name="password" id="password" formControlName="password">
-
-    <button [disabled]="form.invalid">Регистрирай ме!</button>
-</form>
+<section class="login-container">
+    <form [formGroup]="form" (ngSubmit)="login()">
+        <div class="input-group">
+            <label for="email">Имейл</label>
+            <input type="email" name="email" id="email" formControlName="email">
+        </div>
+        <div class="input-group">
+            <label for="password">Парола</label>
+            <input type="password" name="password" id="password" formControlName="password">    
+        </div>
+        <button [disabled]="form.invalid">Влез в профил!</button>
+    </form>
+</section>
