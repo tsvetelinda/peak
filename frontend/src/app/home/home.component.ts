@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { HeaderComponent } from '../core/header/header.component';
 import { MountainsComponent } from '../mountains/mountains/mountains.component';
-import { ActivatedRoute, NavigationEnd, Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router, RouterOutlet } from '@angular/router';
 
-@Component({
+@Component({ 
   selector: 'app-home',
   standalone: true,
-  imports: [HeaderComponent, MountainsComponent, RouterLink],
+  imports: [HeaderComponent, MountainsComponent, RouterOutlet],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css' 
+  styleUrl: './home.component.css'  
 })
 export class HomeComponent implements OnInit {
 
