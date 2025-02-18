@@ -78,3 +78,22 @@ form button:hover {
 form button:enabled {
     cursor: pointer;
 }
+
+.register-prompt {
+    margin-top: 20px;
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: #0D14A1;
+    text-shadow: 1px 1px 2px #ffffff;
+    text-align: center;
+}
+
+.hyperlink {
+    transition: color 0.5s ease;
+    margin-left: 3px;
+}
+
+.hyperlink:hover {
+    color: #F58A07;
+    cursor: pointer;
+}
