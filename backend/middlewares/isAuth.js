@@ -2,8 +2,6 @@ const jwt = require('jsonwebtoken');
 const { AUTH_COOKIE_NAME } = require('../constants.js');
 
 module.exports = (req, res, next) => {
-  console.log(req.headers);
-
   const token = req.cookies[AUTH_COOKIE_NAME];
   if (!token) {
     return res.status(401).json({ message: 'Unauthorized' });
