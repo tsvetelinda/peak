@@ -19,6 +19,9 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
+const cookieParser = require('cookie-parser');
+app.use(cookieParser());
+
 app.use('/mountains', mountainRoutes);
 app.use('/users', userRoutes);
 
