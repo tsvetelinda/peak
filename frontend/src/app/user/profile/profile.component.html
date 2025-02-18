@@ -1,8 +1,11 @@
 <section class="profile-container">
-    <p>Име: {{user?.firstName}} {{user?.lastName}}</p>
-    <p>Телефон: {{user?.phone}}</p>
-    <p>Имейл: {{user?.email}}</p>
-    <p>Дата на раждане: {{user?.birthDate}}</p>
-    <p>Спорт: {{user?.sport}}</p>
-    <p>Умения: {{user?.skillLevel}}</p>
+    <div class="user-data">
+        <p>Име: {{user?.firstName}} {{user?.lastName}}</p>
+        <p>Телефон: {{user?.phone}}</p>
+        <p>Имейл: {{user?.email}}</p>
+        <p>Дата на раждане: {{user?.birthDate}}</p>
+        <p>Спорт: {{user?.sport}}</p>
+        <p>Умения: {{user?.skillLevel}}</p>
+    </div>
+    <button (click)="logout()">Изход</button>
 </section>
