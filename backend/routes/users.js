@@ -73,14 +73,14 @@ router.post('/login', async (req, res, next) => {
         });
 
         return res.status(200).json({
-            _id: newUser._id,
-            firstName: newUser.firstName,
-            lastName: newUser.lastName,
-            email: newUser.email,
-            birthDate: newUser.birthDate,
-            phone: newUser.phone,
-            sport: newUser.phone,
-            skillLevel: newUser.skillLevel 
+            _id: user._id,
+            firstName: user.firstName,
+            lastName: user.lastName,
+            email: user.email,
+            birthDate: user.birthDate,
+            phone: user.phone,
+            sport: user.phone,
+            skillLevel: user.skillLevel 
         });
     } catch (err) {
         next(err);
