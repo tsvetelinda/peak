@@ -99,6 +99,7 @@ router.post('/logout', (req, res) => {
 router.get('/profile', isAuth, async (req, res) => {
     try {
         const user = await User.findById(req.user._id).select('-password');
+        console.log(user);
         if (!user) {
             return res.status(404).end();
         }
