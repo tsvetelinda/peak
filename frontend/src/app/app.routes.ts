@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
-import { WelcomeComponent } from './core/welcome/welcome.component';
+import { ViewSwitcherComponent } from './view-switcher/view-switcher.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
-    { path: 'home', component: WelcomeComponent },
+    { path: 'home', component: ViewSwitcherComponent },
     {
         path: 'login', 
         loadComponent: () => import('./user/login/login.component').then((c) => c.LoginComponent)

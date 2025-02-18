@@ -1,1 +1,5 @@
-<p>view-switcher works!</p>
+@if (isLoggedIn) {
+    <app-profile />
+} @else {
+    <app-welcome />
+}
