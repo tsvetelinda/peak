@@ -50,7 +50,7 @@
 .buttons-container button {
     padding: 10px 25px;
     background-color: #0D14A1;
-    color: #FFF1D5;
+    color: #FFF;
     border: none;
     font-family: "Sofia Sans", serif;
     font-size: 1.3rem;
@@ -63,7 +63,7 @@
 }
 
 .buttons-container button:hover {
-    background-color: #FFF1D5;
+    background-color: #FFF;
     border: 2px solid #0D14A1;
     color: #0D14A1;
     transform: scale(1.2);
