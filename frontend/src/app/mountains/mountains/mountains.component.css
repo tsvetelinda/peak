@@ -1,6 +1,12 @@
 .mountain-container {
     width: 100%;
-    background: linear-gradient(#FFF1D5, #beb5eb, #998FCA 70%, #8776B4);
+    background: linear-gradient(to bottom,  
+        #FFFFFF 0%,    /* Soft white start */
+        #F4EBFF 30%,   /* Very pale lavender */
+        #E5D4FF 55%,   /* Gentle lavender */
+        #DAC6FF 75%,   /* Light lavender */
+        #B892FF 100%   /* Tropical Indigo as the final color */
+);
     position: relative;
 }
 
@@ -32,7 +38,7 @@
 
 .single-nav-wrapper p {
     font-size: 1.5rem;
-    color: #400040;
+    color: #0D14A1;
     font-weight: 700;
     transition: scale 0.5s ease-in-out;
 }
@@ -40,36 +46,33 @@
 .single-nav-wrapper .img-wrapper {
     width: 80px;
     height: 80px;
-    background-color: #FFF1D5;
+    background-color: #131DE8;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: rgba(50, 50, 93, 0.85) 0px 13px 27px -5px, rgba(0, 0, 0, 0.8) 0px 8px 16px -8px;
+    box-shadow: rgba(15, 20, 200, 0.55) 0px 13px 27px -5px, rgba(5, 10, 120, 0.75)  0px 8px 16px -8px;
     cursor: pointer;
     transition: background-color 0.4s ease-in-out, fill 0.4s ease, scale 0.5s ease-in-out;
 }
 
 .single-nav-wrapper:hover .img-wrapper {
-    background-color: #400040;
-    box-shadow: rgba(50, 50, 93, 0.8) 0px 13px 27px -5px, rgba(0, 0, 0, 0.9) 0px 8px 16px -8px;
+    background-color: #F58A07;
+    box-shadow: rgba(15, 20, 200, 0.85) 0px 8px 16px -4px,rgba(5, 10, 120, 0.85) 0px 4px 8px -6px;
     scale: 1.1;
 }
 
-.single-nav-wrapper:hover .img-wrapper g {
-    fill: #FFF1D5;
-}
-
 .single-nav-wrapper:hover p {
+    color: #131DE8;
     scale: 1.2;
 }
 
 .active {
-    background-color: #400040 !important;
+    background-color: #F58A07 !important;
 }
 
 .active g {
-    fill: #FFF1D5;
+    fill: #FFF;
 }
 
 .info-container .logo-desc-wrapper {
@@ -84,10 +87,12 @@
 .mountain-container .info-container .logo-container {
     width: 100%;
     height: auto;
+    display: flex;
+    justify-content: center;
 }
 
 .logo-container img {
-    width: 100%;
+    width: 60%;
     height: auto;
 }
 
@@ -102,10 +107,11 @@
 
 .info {
     width: 100%;
-    font-size: 2.2rem;
-    color: #400040;
+    font-size: 2rem;
+    color: #131DE8;
     font-weight: 700;
     text-align: center;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.9);
 }
 
 .info-container .icons-container {
@@ -133,28 +139,28 @@
 
 .icon-with-title .title {
     font-size: 2.5rem;
-    color: #400040;
+    color: #131DE8;
     font-weight: 700;
     transition: scale 0.5s ease-in-out;
-    text-shadow: 2px 1px 1px rgba(255, 255, 255, 0.7);
+    text-shadow: 2px 1px 1px rgba(255, 255, 255, 0.9);
 }
 
 .icon-with-title .single-icon {
-    background-color: #fff;
+    background-color: #FEFDFF;
     width: 170px;
     height: 170px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: rgba(50, 50, 93, 0.85) 0px 13px 27px -5px, rgba(0, 0, 0, 0.8) 0px 8px 16px -8px;
+    box-shadow: rgba(15, 20, 200, 0.55) 0px 13px 27px -5px, rgba(5, 10, 120, 0.75)  0px 8px 16px -8px;
     cursor: pointer;
     transition: background-color 0.4s ease-in-out, fill 0.4s ease, scale 0.5s ease-in-out;
 }
 
 .icon-with-title:hover .single-icon {
-    background-color: #400040;
-    box-shadow: rgba(50, 50, 93, 0.8) 0px 13px 27px -5px, rgba(0, 0, 0, 0.9) 0px 8px 16px -8px;
+    background-color: #131DE8;
+    box-shadow: rgba(15, 20, 200, 0.85) 0px 13px 27px -5px, rgba(5, 10, 120, 0.85)  0px 8px 16px -8px;
     scale: 1.1;
 }
 
@@ -163,15 +169,16 @@
 }
 
 .icon-with-title:hover .title {
-    color: #fff;
+    color: #F58A07;
     scale: 1.2;
-    text-shadow: 2px 1px 1px rgba(44, 43, 43, 0.7);
 }
 
 .mountain-container .img-container {
     width: auto;
     height: 90%;
     display: flex;
+    justify-content: right;
+    align-items: flex-end;
     position: absolute;
     bottom: 0;
     right: 0;
@@ -179,9 +186,9 @@
 }
 
 .mountain-container .img-container img {
-    width: 100%;
-    height: auto;
-    opacity: 80%;
+    width: auto;
+    height: 80%;
+    opacity: 30%;
 }
 
 .list-container {
