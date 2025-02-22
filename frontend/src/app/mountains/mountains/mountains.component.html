@@ -2,7 +2,7 @@
     <div id="{{mountain.nameEnglish}}" class="mountain-container">
         <div class="info-container">
             <div class="nav-container">
-                <a class="single-nav-wrapper" href="#vitosha">
+                <a class="single-nav-wrapper" [routerLink]="['/home']" fragment="vitosha">
                     <div [class]="mountain.nameEnglish === 'vitosha' ? 'img-wrapper active' : 'img-wrapper'">
                         <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
     width="70" height="70" viewBox="0 0 1498.000000 586.000000"
@@ -31,7 +31,7 @@
                     </div>
                     <p>Витоша</p>
                 </a>
-                <a class="single-nav-wrapper" href="#rila">
+                <a class="single-nav-wrapper" [routerLink]="['/home']" fragment="rila">
                     <div [class]="mountain.nameEnglish === 'rila' ? 'img-wrapper active' : 'img-wrapper'">
                         <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
     width="70" height="70" viewBox="0 0 1573.000000 627.000000"
@@ -66,7 +66,7 @@
                     </div>
                     <p>Рила</p>
                 </a>
-                <a class="single-nav-wrapper" href="#pirin">
+                <a class="single-nav-wrapper" [routerLink]="['/home']" fragment="pirin">
                     <div [class]="mountain.nameEnglish === 'pirin' ? 'img-wrapper active' : 'img-wrapper'">
                         <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
     width="70" height="70" viewBox="0 0 1238.000000 585.000000"
@@ -106,7 +106,7 @@
                     </div>
                     <p>Пирин</p>
                 </a>
-                <a class="single-nav-wrapper" href="#rodopi">
+                <a class="single-nav-wrapper" [routerLink]="['/home']" fragment="rodopi">
                     <div [class]="mountain.nameEnglish === 'rodopi' ? 'img-wrapper active' : 'img-wrapper'">
                         <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
                         width="70" height="70" viewBox="0 0 1294.000000 622.000000"

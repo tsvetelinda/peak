@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Mountain } from '../../types/mountain';
 import { ApiService } from '../../api.service';
 import { animate, state, style, transition, trigger } from '@angular/animations';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-mountains',
-  standalone: true,
-  imports: [],
+  standalone: true, 
+  imports: [RouterLink],
   templateUrl: './mountains.component.html',
   styleUrl: './mountains.component.css',
   animations: [
