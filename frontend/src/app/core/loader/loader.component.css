@@ -1,0 +1,37 @@
+.loader-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+    font-family: "Sofia Sans", serif;
+    color: #0D14A1;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.loader-container img {
+    height: 10rem;
+    width: auto;
+}
+
+.pulse-text {
+    display: inline-block;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

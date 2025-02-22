@@ -24,7 +24,14 @@
     height: 100vh;
 }
 
+
 .img-container img {
     width: 100%;
     height: auto;
 }
+
+/*
+.img-container video {
+    width: 100%;
+    height: auto;
+}*/

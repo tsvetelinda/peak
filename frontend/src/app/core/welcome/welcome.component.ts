@@ -9,5 +9,15 @@ import { RouterLink } from '@angular/router';
   styleUrl: './welcome.component.css'
 })
 export class WelcomeComponent {
+  isHovered = false;
+  isTransitioning = false;
 
+  stopAnimationSmoothly() {
+    this.isTransitioning = true;
+
+    setTimeout(() => {
+      this.isHovered = true;
+      this.isTransitioning = false;
+    }, 200);
+  }
 }

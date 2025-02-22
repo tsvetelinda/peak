@@ -3,11 +3,12 @@ import { Mountain } from '../../types/mountain';
 import { ApiService } from '../../api.service';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { RouterLink } from '@angular/router';
+import { LoaderComponent } from '../../core/loader/loader.component';
 
 @Component({
   selector: 'app-mountains',
   standalone: true, 
-  imports: [RouterLink],
+  imports: [RouterLink, LoaderComponent], 
   templateUrl: './mountains.component.html',
   styleUrl: './mountains.component.css',
   animations: [
@@ -30,6 +31,8 @@ import { RouterLink } from '@angular/router';
   ]
 })
 export class MountainsComponent implements OnInit {
+  isLoading = true;
+
   mountains: Mountain[] = [];
   slopesVisible: boolean = false;
   restaurantsVisible: boolean = false;
@@ -45,6 +48,7 @@ export class MountainsComponent implements OnInit {
         mountain.hotelsVisible = false;
         mountain.parkingVisible = false;
       });
+      this.isLoading = false;
     });
   }
 

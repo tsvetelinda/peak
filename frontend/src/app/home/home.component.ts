@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { HeaderComponent } from '../core/header/header.component';
 import { MountainsComponent } from '../mountains/mountains/mountains.component';
 import { ActivatedRoute, NavigationEnd, Router, RouterOutlet } from '@angular/router';
