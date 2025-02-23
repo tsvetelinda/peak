@@ -52,7 +52,7 @@ router.post('/login', async (req, res, next) => {
         const { email, password } = req.body;
 
         if (!email || !password) {
-            return res.status(400).json({ message: 'Email and password are required!' });
+            return res.status(400).json({ message: 'Моля, въведете имейл и парола!' });
         }
 
         const user = await User.findOne({ email }).lean();
@@ -60,7 +60,7 @@ router.post('/login', async (req, res, next) => {
         const isValid = user ? await bcrypt.compare(password, user.password) : false;
 
         if (!isValid) {
-            return res.status(401).json({ message: 'Invalid email or password!' });
+            return res.status(401).json({ message: 'Невалиден имейл или парола!' });
         }
 
         const token = await generateToken(user);
