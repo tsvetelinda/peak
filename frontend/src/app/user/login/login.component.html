@@ -1,14 +1,17 @@
 <section class="login-container">
+    <div class="img-container">
+        <img src="bear-with-snowboard.png" alt="A bear with sunglasses and a snowboard."/>
+        <div class="speech-bubble">Още нямаш профил? Време е да се спуснеш в приключението!<br><span class="hyperlink" [routerLink]="['/register']">Присъедини се сега!</span></div>
+    </div>
     <form [formGroup]="form" (ngSubmit)="login()">
         <div class="input-group">
             <label for="email">Имейл</label>
-            <input type="email" name="email" id="email" formControlName="email">
+            <input type="email" name="email" id="email" placeholder="myemail@gmail.com" formControlName="email">
         </div>
         <div class="input-group">
             <label for="password">Парола</label>
-            <input type="password" name="password" id="password" formControlName="password">    
+            <input type="password" name="password" id="password" placeholder="••••••••" formControlName="password">    
         </div>
         <button [disabled]="form.invalid">Влез в профил!</button>
     </form>
-    <p class="register-prompt">Още нямаш профил? Време е да се спуснеш в приключението!<br><span class="hyperlink" [routerLink]="['/register']">Присъедини се сега!</span></p>
 </section>

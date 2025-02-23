@@ -1,25 +1,68 @@
 .login-container {
-    width: 70%;
+    width: 55%;
     background-color: rgba(255, 255, 255, 0.85);
     position: absolute;
     top: 155px;
     left: 50%;
     transform: translateX(-50%);
-    padding: 40px;
+    padding: 40px 20px;
     display: flex;
-    flex-direction: column;
-    gap: 10px;
     align-items: center;
+    justify-content: center;
+    gap: 20px;
     font-family: "Sofia Sans", serif;
     transition: transform 0.8s ease-in-out;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    box-shadow: rgba(15, 20, 200, 0.35) 0px 6px 12px -4px, rgba(5, 10, 120, 0.5) 0px 4px 8px -6px;
+}
+
+.img-container {
+    width: 30%;
+    height: 20rem;
+    display: flex;
+    align-items: flex-end ;
+    position: relative;
+}
+
+.img-container img {
+    width: auto;
+    height: 15rem;
+}
+
+.speech-bubble {
+    position: absolute;
+    top: -2%;
+    right: 10%;
+    transform: translateX(20%);
+    background: white;
+    color: #131DE8;
+    font-weight: 700;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 1rem;
+    text-align: center;
+    box-shadow: rgba(15, 20, 200, 0.35) 0px 6px 12px -4px, rgba(5, 10, 120, 0.5) 0px 4px 8px -6px;
+    max-width: 200px;
+}
+
+.speech-bubble::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 10%;
+    transform: translateX(-10%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid white;
 }
 
 .login-container form {
+    width: 40%;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    width: 30%;
+    align-self: center;
+    gap: 30px;
 }
 
 form .input-group {
@@ -37,12 +80,13 @@ form label {
 
 form input {
     padding: 10px 5px;
-    border: 1px solid #0D14A1;
+    border: 1px solid #131DE8;
     border-radius: 0;
     font-size: 1.2rem;
-    color: #0D14A1;
+    color: #131DE8;
     transition: border 0.5s ease;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    box-shadow: rgba(15, 20, 200, 0.35) 0px 6px 12px -4px, rgba(5, 10, 120, 0.5) 0px 4px 8px -6px;
+    font-family: "Sofia Sans", serif;
 }
 
 form input:focus {
@@ -51,9 +95,14 @@ form input:focus {
     outline: none;
 }
 
+input::placeholder {
+    color: #c4b8da;
+    opacity: 1;
+  }
+
 form button {
     padding: 10px 25px;
-    background-color: #0D14A1;
+    background-color: #131DE8;
     color: #FFF;
     border: 1px solid transparent;
     font-family: "Sofia Sans", serif;
@@ -63,13 +112,13 @@ form button {
     border: 1px solid transparent;
     transition: background-color 0.5s ease-in-out, transform 0.5s ease-in-out;
     text-shadow: 1px 1px 2px #000;
-    box-shadow: rgba(50, 50, 93, 0.8) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    box-shadow: rgba(30, 60, 180, 0.8) 0px 13px 27px -5px, rgba(10, 20, 150, 0.4) 0px 8px 16px -8px;
 }
 
 form button:hover {
     background-color: #FFF;
-    border: 1px solid #0D14A1;
-    color: #0D14A1;
+    border: 1px solid #131DE8;
+    color: #131DE8;
     text-shadow: none;
     transform: scale(1.2);
     font-weight: 500;
@@ -79,21 +128,13 @@ form button:enabled {
     cursor: pointer;
 }
 
-.register-prompt {
-    margin-top: 20px;
-    font-weight: 800;
-    font-size: 1.5rem;
-    color: #0D14A1;
-    text-shadow: 1px 1px 2px #ffffff;
-    text-align: center;
-}
-
 .hyperlink {
     transition: color 0.5s ease;
     margin-left: 3px;
+    color: #F58A07;
 }
 
 .hyperlink:hover {
-    color: #F58A07;
     cursor: pointer;
+    color: #131DE8;
 }
