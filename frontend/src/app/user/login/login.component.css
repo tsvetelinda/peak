@@ -57,6 +57,17 @@
     border-top: 10px solid white;
 }
 
+.hyperlink {
+    transition: color 0.5s ease;
+    margin-left: 3px;
+    color: #F58A07;
+}
+
+.hyperlink:hover {
+    cursor: pointer;
+    color: #131DE8;
+}
+
 .login-container form {
     width: 40%;
     display: flex;
@@ -80,13 +91,16 @@ form label {
 
 form input {
     padding: 10px 5px;
-    border: 1px solid #131DE8;
     border-radius: 0;
     font-size: 1.2rem;
     color: #131DE8;
     transition: border 0.5s ease;
     box-shadow: rgba(15, 20, 200, 0.35) 0px 6px 12px -4px, rgba(5, 10, 120, 0.5) 0px 4px 8px -6px;
     font-family: "Sofia Sans", serif;
+}
+
+.regular-input {
+    border: 1px solid #131DE8;
 }
 
 form input:focus {
@@ -124,17 +138,11 @@ form button:hover {
     font-weight: 500;
 }
 
-form button:enabled {
-    cursor: pointer;
-}
-
-.hyperlink {
-    transition: color 0.5s ease;
-    margin-left: 3px;
+.error {
     color: #F58A07;
+    font-weight: 700;
 }
 
-.hyperlink:hover {
-    cursor: pointer;
-    color: #131DE8;
+.error-input {
+    border: 1px solid #F58A07;
 }

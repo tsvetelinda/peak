@@ -6,12 +6,24 @@
     <form [formGroup]="form" (ngSubmit)="login()">
         <div class="input-group">
             <label for="email">Имейл</label>
-            <input type="email" name="email" id="email" placeholder="myemail@gmail.com" formControlName="email">
+            <input type="email" name="email" id="email" placeholder="myemail@gmail.com" [class]="isFieldEmpty('email') ? 'error-input' : 'regular-input'" formControlName="email">
+            @if (isFieldEmpty('email')) {
+                <p class="error">*Моля, въведете своя имейл.</p>
+            }
         </div>
         <div class="input-group">
             <label for="password">Парола</label>
-            <input type="password" name="password" id="password" placeholder="••••••••" formControlName="password">    
+            <input type="password" name="password" id="password" placeholder="••••••••" [class]="isFieldEmpty('password') ? 'error-input' : 'regular-input'" formControlName="password"> 
+            @if (isFieldEmpty('password')) {
+                <p class="error">*Моля, въведете паролата си.</p>
+            }   
         </div>
-        <button [disabled]="form.invalid">Влез в профил!</button>
+        <button>Влез в профил!</button>
+        @if (form.invalid && this.submitted) {
+            <p class="error">*Не забравяйте да попълните всички полета.</p>
+        }
+        @if (errorMsg != null) {
+            <p class="error">*{{ this.errorMsg }}</p>
+        }
     </form>
 </section>

@@ -11,6 +11,9 @@ import { Router, RouterLink } from '@angular/router';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
+  submitted: boolean = false;
+  errorMsg: string | null = null;
+
   form = new FormGroup({
     email: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required])
@@ -19,15 +22,25 @@ export class LoginComponent {
   constructor(private userService: UserService, private router: Router) { }
 
   login() {
+    if (this.form.invalid) {
+      this.submitted = true;
+      return;
+    }
+
     const { email, password } = this.form.value;
 
     this.userService.login(email!, password!).subscribe({
       next: () => {
         this.router.navigate(['home']);
       },
-      error: () => {
+      error: (err) => {
         this.form.reset();
+        this.errorMsg = err.error.message;
       }
     });
+  }
+
+  isFieldEmpty(controlName: string) {
+    return this.form.get(controlName)?.touched && this.form.get(controlName)?.errors?.['required'];
   }
 }
