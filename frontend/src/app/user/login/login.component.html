@@ -19,11 +19,10 @@
             }   
         </div>
         <button>Влез в профил!</button>
-        @if (form.invalid && this.submitted) {
-            <p class="error">*Не забравяйте да попълните всички полета.</p>
-        }
         @if (errorMsg != null) {
             <p class="error">*{{ this.errorMsg }}</p>
+        } @else if (form.invalid && this.submitted) {
+            <p class="error">*Не забравяйте да попълните всички полета.</p>
         }
     </form>
 </section>
