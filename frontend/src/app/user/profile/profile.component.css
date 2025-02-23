@@ -1,11 +1,11 @@
 .profile-container {
-    width: 70%;
+    width: 40%;
     background-color: rgba(255, 255, 255, 0.85);
     position: absolute;
     top: 155px;
     left: 50%;
     transform: translateX(-50%);
-    padding: 40px;
+    padding: 50px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -14,4 +14,46 @@
     transition: transform 0.8s ease-in-out;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
+
+.user-data {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.name-avatar-wrapper {
+    position: relative;
+}
+
+.avatar-container {
+    width: 15rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 4px solid #F58A07;
+    padding: 25px 10px 10px 15px;
+    box-shadow: rgba(90, 50, 200, 0.4) 0px 10px 20px -5px, rgba(50, 20, 150, 0.6) 0px 5px 10px -5px;
+}
+
+.avatar-container img {
+    width: 100%;
+    height: auto;
+}
+
+.full-name {
+    position: absolute;
+    right: 65%;
+    bottom: -10%;
+}
+
+.full-name .name {
+    fill: #131DE8;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+
 
