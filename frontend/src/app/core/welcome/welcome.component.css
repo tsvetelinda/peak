@@ -35,7 +35,7 @@
 .auth-prompt {
     font-size: 1.5rem;
     text-align: center;
-    color: #0D14A1;
+    color: #131DE8;
     font-weight: 700;
 }
 
@@ -55,7 +55,7 @@
 
 .buttons-container button {
     padding: 10px 25px;
-    background-color: #0D14A1;
+    background-color: #131DE8;
     color: #FFF;
     border: none;
     font-family: "Sofia Sans", serif;
@@ -70,8 +70,8 @@
 
 .buttons-container button:hover {
     background-color: #FFF;
-    border: 2px solid #0D14A1;
-    color: #0D14A1;
+    border: 2px solid #131DE8;
+    color: #131DE8;
     transform: scale(1.2);
     text-shadow: none;
     box-shadow: rgba(15, 20, 200, 0.65) 0px 6px 12px -4px, rgba(5, 10, 120, 0.65) 0px 4px 8px -6px;
@@ -97,13 +97,13 @@
 }
 
 .icon-container p {
-    color: #0D14A1;
+    color: #131DE8;
     font-size: 1.5rem;
     font-weight: 700;
 }
 
 .icon-container:hover {
-    background-color: #0D14A1;
+    background-color: #131DE8;
     box-shadow: rgba(15, 20, 200, 0.65) 0px 6px 12px -4px, rgba(5, 10, 120, 0.65) 0px 4px 8px -6px;
     scale: 1.1;
 }
@@ -135,7 +135,7 @@
     right: -20%;
     transform: translateX(20%);
     background: white;
-    color: #0D14A1;
+    color: #131DE8;
     font-weight: 700;
     padding: 10px 15px;
     border-radius: 10px;
