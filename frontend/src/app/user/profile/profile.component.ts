@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { User } from '../../types/user';
 import { Router } from '@angular/router';
+import { EditPasswordComponent } from '../edit-password/edit-password.component';
 
 @Component({
   selector: 'app-profile',
   standalone: true,
-  imports: [],
+  imports: [EditPasswordComponent],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.css'
 })
@@ -15,6 +16,8 @@ export class ProfileComponent implements OnInit {
   skillIcon: string = '';
   ageGroup: string = '';
   avatarPath: string = '';
+
+  isEditingPassword: boolean = false;
 
   constructor(private userService: UserService, private router: Router) { }
 
@@ -43,11 +46,16 @@ export class ProfileComponent implements OnInit {
     });
   }
 
-  changePassword() {
-
+  toggleChangePassword() {
+    this.isEditingPassword = !this.isEditingPassword;
   }
 
-  editProfile() {
+  onPasswordUpdated() {
+    this.isEditingPassword = false;
+    // Optionally show a success message
+  }
+
+  toggleEditProfile() {
 
   }
 

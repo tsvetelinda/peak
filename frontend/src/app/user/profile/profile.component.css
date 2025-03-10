@@ -12,6 +12,11 @@
     font-family: "Sofia Sans", serif;
     transition: transform 0.8s ease-in-out;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    transition: width 0.5s ease-in-out;
+}
+
+.profile-container.expanded {
+    width: 75%;
 }
 
 .user-data {
@@ -138,5 +143,42 @@
     transform: translateX(-220%) translateY(-50%);
     opacity: 1;
 }
-  
 
+.btn-container .active {
+    background-color: #F58A07;
+    transform: scale(1.1);
+}
+
+.btn-container .active .btn-title {
+    transform: translateX(-220%) translateY(-50%);
+    opacity: 1;
+}
+
+.edit-password-form {
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0;
+    max-width: 0;
+    overflow: hidden;
+    transition: max-width 0.7s ease-in-out, max-height 0.7s ease-in-out;
+}
+
+.profile-container.expanded .edit-password-form {
+    width: 50%;
+    max-width: 50%;
+    max-height: 100%;
+    opacity: 1;
+    visibility: visible;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    transition: max-width 0.7s ease-in-out, max-height 0.7s ease-in-out, opacity 1s ease-in-out 0.4s;
+}
+
+.profile-container.expanded .user-data {
+    width: 30%; 
+}
+
+.profile-container.expanded .btn-container {
+    width: 20%;
+}

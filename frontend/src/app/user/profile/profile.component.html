@@ -1,4 +1,4 @@
-<section class="profile-container">
+<section class="profile-container" [class.expanded]="isEditingPassword">
     <div class="user-data">
         <div class="avatar-container">
             <img src="{{this.avatarPath}}" alt="Avatar Image."/>
@@ -39,11 +39,11 @@
             <img src="/icons/logout.svg" alt="Logout Icon">
             <p class="btn-title">Изход от профил</p>
         </button>
-        <button (click)="changePassword()" aria-label="Change Password">
+        <button (click)="toggleChangePassword()" aria-label="Change Password" [class.active]="isEditingPassword">
             <img src="/icons/change-password.svg" alt="Change Password Icon">
             <p class="btn-title">Смени парола</p>
         </button>
-        <button (click)="editProfile()" aria-label="Edit Profile">
+        <button (click)="toggleEditProfile()" aria-label="Edit Profile">
             <img src="/icons/edit-profile.svg" alt="Edit Profile Icon">
             <p class="btn-title">Редактирай профил</p>
         </button>
@@ -52,4 +52,5 @@
             <p class="btn-title">Моите карти</p>
         </button>  
     </div>
-</section>
+    <app-edit-password class="edit-password-form" [class.show]="isEditingPassword" (cancel)="toggleChangePassword()" (passwordUpdated)="onPasswordUpdated()"></app-edit-password>
+</section> 
