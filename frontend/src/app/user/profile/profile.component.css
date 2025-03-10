@@ -1,5 +1,5 @@
 .profile-container {
-    width: 40%;
+    width: 35%;
     background-color: rgba(255, 255, 255, 0.85);
     position: absolute;
     top: 155px;
@@ -7,8 +7,7 @@
     transform: translateX(-50%);
     padding: 50px;
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    gap: 30px;
     align-items: center;
     font-family: "Sofia Sans", serif;
     transition: transform 0.8s ease-in-out;
@@ -16,14 +15,11 @@
 }
 
 .user-data {
-    width: 100%;
+    width: 60%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-
-.name-avatar-wrapper {
-    position: relative;
+    gap: 30px;
 }
 
 .avatar-container {
@@ -43,17 +39,104 @@
     height: auto;
 }
 
-.full-name {
-    position: absolute;
-    right: 65%;
-    bottom: -10%;
+.personal-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid #F58A07;
+    position: relative;
+    border-radius: 3px;
+    border-top-right-radius: 0;
 }
 
-.full-name .name {
-    fill: #131DE8;
-    font-size: 1.2rem;
+.name-container {
+    position: absolute;
+    top: -27px;
+    right: 0;
+    padding: 5px 15px 0px 15px;
+    background-color: #F58A07;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-size: 1.1rem;
+}
+
+.name-container p {
+    color: #131DE8;
     font-weight: 600;
 }
 
+.logo {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 100px;
+    height: auto;
+}
 
+.row-container {
+    display: flex;
+    align-items: center;
+}
+
+.img-container {
+    padding: 0 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.row-container p {
+    color: #131DE8;
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+.btn-container {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 40px;
+}
+
+.btn-container button {
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #131DE8;
+    transition: background-color 0.5s ease-in-out, transform 0.5s ease-in-out;
+    position: relative;
+    box-shadow: rgba(15, 20, 200, 0.55) 0px 13px 27px -5px, rgba(5, 10, 120, 0.75)  0px 8px 16px -8px;
+}
+
+.btn-container button .btn-title {
+    position: absolute;
+    width: 100%;
+    right: -100%;
+    top: 50%;
+    transform: translateX(0) translateY(-50%);
+    color: #131DE8;
+    font-family: "Sofia Sans", serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+    opacity: 0;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+  
+.btn-container button:hover {
+    background-color: #F58A07;
+    transform: scale(1.1);
+}
+
+.btn-container button:hover .btn-title {
+    transform: translateX(-220%) translateY(-50%);
+    opacity: 1;
+}
+  
 

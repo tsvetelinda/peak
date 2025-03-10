@@ -1,29 +1,55 @@
 <section class="profile-container">
     <div class="user-data">
-        <div class="name-avatar-wrapper">
-            <div class="avatar-container">
-                @if (user?.sport == 'Snowboarder') {
-                    <img src="bear-avatar.png" alt="Bear as the avatar"/>
-                }
+        <div class="avatar-container">
+            <img src="{{this.avatarPath}}" alt="Avatar Image."/>
+        </div>
+        <div class="personal-info">
+            <div class="name-container">
+                <p>{{user?.firstName}} {{user?.lastName}}</p>
             </div>
-            <svg class="full-name" width="200" height="100">
-                <defs>
-                    <path id="curve" d="M 10,10 A 90,90 0 0,0 190,10" fill="transparent" />
-                </defs>
-                <text class="name" width="300">
-                    <textPath href="#curve" startOffset="80%" text-anchor="middle">
-                        {{user?.firstName}} {{user?.lastName}}
-                    </textPath>
-                </text>
-            </svg>            
+            <div class="row-container">
+                <div class="img-container">
+                    <img src="/icons/walkie-talkies.svg" alt="Walkie Talkie Icon">
+                </div>
+                <p>{{user?.phone}}</p>
+            </div>
+            <div class="row-container">
+                <div class="img-container">
+                    <img src="/icons/mail.svg" alt="Envelope Icon">
+                </div>
+                <p>{{user?.email}}</p>
+            </div>
+            <div class="row-container">
+                <div class="img-container">
+                    <img src="{{this.skillIcon}}" alt="Skill Icon">
+                </div>
+                <p>{{user?.skillLevel}}</p>
+            </div>
+            <div class="row-container">
+                <div class="img-container">
+                    <img src="/icons/id-card.svg" alt="ID Card Icon">
+                </div>
+                <p>{{this.ageGroup}}</p>
+            </div>
+            <img class="logo" src="logo.png" alt="Peak Logo">
         </div>
     </div>
-    <div>
-        <p>Телефон: {{user?.phone}}</p>
-        <p>Имейл: {{user?.email}}</p>
-        <p>Дата на раждане: {{user?.birthDate}}</p>
-        <p>Спорт: {{user?.sport}}</p>
-        <p>Умения: {{user?.skillLevel}}</p>
+    <div class="btn-container">
+        <button (click)="logout()" aria-label="Logout">
+            <img src="/icons/logout.svg" alt="Logout Icon">
+            <p class="btn-title">Изход от профил</p>
+        </button>
+        <button (click)="changePassword()" aria-label="Change Password">
+            <img src="/icons/change-password.svg" alt="Change Password Icon">
+            <p class="btn-title">Смени парола</p>
+        </button>
+        <button (click)="editProfile()" aria-label="Edit Profile">
+            <img src="/icons/edit-profile.svg" alt="Edit Profile Icon">
+            <p class="btn-title">Редактирай профил</p>
+        </button>
+        <button (click)="showPasses()" aria-label="Show Passes">
+            <img src="/icons/ski-pass.svg" alt="Ski Pass Icon">
+            <p class="btn-title">Моите карти</p>
+        </button>  
     </div>
-    <button (click)="logout()">Изход</button>
 </section>
