@@ -136,7 +136,7 @@ router.patch('/:id/change-password', async (req, res) => {
         return res.status(400).json({ message: 'Невалидна парола!' });
     }
 
-    user.password = await bcrypt.hash(newPassword, 10);
+    user.password = newPassword;
     await user.save();
 
     res.json(user);
