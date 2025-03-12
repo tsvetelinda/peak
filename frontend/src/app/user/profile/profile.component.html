@@ -52,5 +52,5 @@
             <p class="btn-title">Моите карти</p>
         </button>  
     </div>
-    <app-edit-password class="edit-password-form" [class.show]="isEditingPassword" (cancel)="toggleChangePassword()" (passwordUpdated)="onPasswordUpdated()"></app-edit-password>
+    <app-edit-password [user]="user!" class="edit-password-form" [class.show]="isEditingPassword" (cancel)="toggleChangePassword()" (passwordUpdated)="onPasswordUpdated()"></app-edit-password>
 </section> 

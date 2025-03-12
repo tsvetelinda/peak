@@ -45,4 +45,9 @@ export class UserService {
     return this.http.put<User>(`/api/users/${userId}`, { firstName, lastName, email, birthDate, phone, sport, skillLevel })
     .pipe(tap((user) => this.user$$.next(user)));
   }
+
+  changePassword(userId: string | undefined, oldPassword: string, newPassword: string) {
+    return this.http.patch<User>(`/api/users/${userId}/change-password`, { oldPassword, newPassword })
+    .pipe(tap((user) => this.user$$.next(user)));
+  }
 }

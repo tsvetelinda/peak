@@ -1,6 +1,7 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserService } from '../user.service';
+import { User } from '../../types/user';
 
 @Component({
   selector: 'app-edit-password',
@@ -10,6 +11,7 @@ import { UserService } from '../user.service';
   styleUrl: './edit-password.component.css'
 })
 export class EditPasswordComponent {
+  @Input() user!: User;
   @Output() cancel = new EventEmitter<void>();
   @Output() passwordUpdated = new EventEmitter<void>();
   
@@ -25,16 +27,25 @@ export class EditPasswordComponent {
   constructor(private userService: UserService) { }
 
   submitPassword(event: Event) {
-    event.preventDefault(); // Prevent form refresh
+    event.preventDefault();
 
-    /*
-    if (this.newPassword !== this.confirmPassword) {
-      alert('Passwords do not match!');
+    const { currentPassword, newPassword, reNewPassword } = this.form.value;
+
+    if (newPassword !== reNewPassword) {
+      this.errorMsg = 'Паролите не съответстват!';
       return;
-    }*/
+    }
 
-    alert('Password updated successfully!');
-    this.passwordUpdated.emit(); // Notify the parent component
+    this.userService.changePassword(this.user._id, currentPassword!, newPassword!).subscribe({
+      next: () => {
+        this.form.reset();
+        this.passwordUpdated.emit();
+      },
+      error: (err) => {
+        this.form.reset();
+        this.errorMsg = err.error.message;
+      }
+    });
   }
 
   cancelEdit() {
