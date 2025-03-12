@@ -122,6 +122,26 @@ router.put('/:id', async (req, res) => {
     }
 });
 
+router.patch('/:id/change-password', async (req, res) => {
+    const { oldPassword, newPassword } = req.body;
+    const user = await User.findById(req.params.id);
+
+    if (!oldPassword || !newPassword) {
+        return res.status(400).json({ message: 'Моля, попълнете всички полета със съответните пароли!' });
+    }
+
+    const isValid = user ? await bcrypt.compare(oldPassword, user.password) : false;
+
+    if (!isValid) {
+        return res.status(400).json({ message: 'Невалидна парола!' });
+    }
+
+    user.password = await bcrypt.hash(newPassword, 10);
+    await user.save();
+
+    res.json(user);
+});
+
 async function generateToken(user) {
     const payload = { _id: user._id };
     const options = { expiresIn: '2h' };
