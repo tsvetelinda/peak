@@ -3,11 +3,12 @@ import { UserService } from '../user.service';
 import { User } from '../../types/user';
 import { Router } from '@angular/router';
 import { EditPasswordComponent } from '../edit-password/edit-password.component';
+import { EditProfileComponent } from '../edit-profile/edit-profile.component';
 
 @Component({
   selector: 'app-profile',
   standalone: true,
-  imports: [EditPasswordComponent],
+  imports: [EditPasswordComponent, EditProfileComponent],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.css'
 })
@@ -18,6 +19,7 @@ export class ProfileComponent implements OnInit {
   avatarPath: string = '';
 
   isEditingPassword: boolean = false;
+  isEditingProfile: boolean = false;
 
   constructor(private userService: UserService, private router: Router) { }
 
@@ -52,11 +54,18 @@ export class ProfileComponent implements OnInit {
 
   onPasswordUpdated() {
     this.isEditingPassword = false;
-    // Optionally show a success message
   }
 
   toggleEditProfile() {
+    this.isEditingProfile = !this.isEditingProfile;
+  }
 
+  onProfileUpdated(updatedUser: User) {
+    this.user = updatedUser;
+    this.setAvatarPath(this.user.sport);
+    this.setAgeGroup(this.user.birthDate);
+    this.setSkillIcon(this.user.skillLevel);
+    this.isEditingProfile = false;
   }
 
   showPasses() {

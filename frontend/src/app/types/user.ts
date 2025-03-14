@@ -8,3 +8,13 @@ export interface User {
     "sport": string;
     "skillLevel": string;
 }
+
+export interface ProfileDetails {
+    "firstName": string;
+    "lastName": string;
+    "email": string;
+    "birthDate": string;
+    "phone": string;
+    "sport": string;
+    "skillLevel": string;
+}
