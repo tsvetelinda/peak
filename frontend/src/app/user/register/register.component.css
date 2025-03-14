@@ -60,6 +60,10 @@ form input:focus,
     outline: none;
 }
 
+#sport option {
+    font-family: "Sofia Sans", serif;
+}
+
 .skill-wrapper {
     display: flex;
     justify-content: space-around;
