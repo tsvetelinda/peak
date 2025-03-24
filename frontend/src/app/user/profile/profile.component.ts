@@ -75,13 +75,13 @@ export class ProfileComponent implements OnInit {
   private setSkillIcon(skillLevel: string): void {
     switch (skillLevel) {
       case 'Beginner':
-        this.skillIcon = '/icons/gloves.svg';
+        this.skillIcon = 'icons/gloves.svg';
         break;
       case 'Intermediate':
-        this.skillIcon = '/icons/goggles.svg';
+        this.skillIcon = 'icons/goggles.svg';
         break;
       case 'Advanced':
-        this.skillIcon = '/icons/boots.svg';
+        this.skillIcon = 'icons/boots.svg';
         break;
     }
   }
