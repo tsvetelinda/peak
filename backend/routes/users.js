@@ -144,10 +144,10 @@ router.patch('/:id/change-password', async (req, res) => {
     res.json(user);
 });
 
-router.post('/ski-pass/:id', async (req, res) => {
+router.post('/:id/ski-pass', async (req, res) => {
   try {
     const userId = req.params.id;
-    const { startDate, endDate, priceRate } = req.body;
+    const { startDate, endDate, mountain, priceRate } = req.body;
 
     const qrData = uuidv4();
 
@@ -156,6 +156,7 @@ router.post('/ski-pass/:id', async (req, res) => {
     const newSkiPass = {
       startDate,
       endDate,
+      mountain,
       priceRate,
       qrCodeData: qrCodeString,
     };

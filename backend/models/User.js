@@ -12,6 +12,10 @@ const skiPassSchema = new mongoose.Schema({
         type: Date,
         required: true,
     },
+    mountain: {
+        type: String,
+        required: true,
+    },
     priceRate: {
         type: String,
         required: true,
