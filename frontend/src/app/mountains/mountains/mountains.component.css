@@ -98,11 +98,28 @@
 
 .details {
     display: flex;
-    flex-direction: column;
     width: 50%;
     gap: 30px;
     position: relative;
     z-index: 2;
+}
+
+.details .pass-container {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-left: 30px;
+}
+
+.details .pass-container img {
+    width: auto;
+    height: 60%;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;;
+}
+
+.details .pass-container img:hover {
+    transform: scale(1.1) rotate(5deg);
 }
 
 .info {
