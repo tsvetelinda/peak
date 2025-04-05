@@ -39,6 +39,7 @@ form input,
     border: 1px solid #0D14A1;
     border-radius: 0;
     font-size: 1rem;
+    font-family: "Sofia Sans", serif;
     color: #0D14A1;
     transition: border 0.5s ease;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
