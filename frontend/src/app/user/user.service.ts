@@ -50,4 +50,9 @@ export class UserService {
     return this.http.patch<User>(`/api/users/${userId}/change-password`, { oldPassword, newPassword })
     .pipe(tap((user) => this.user$$.next(user)));
   }
+
+  buySkiPass(userId: string | undefined, startDate: Date, endDate: Date) {
+    return this.http.post<User>(`/api/users/${userId}/ski-pass`, { startDate, endDate })
+    .pipe(tap((user) => this.user$$.next(user)));
+  }
 }

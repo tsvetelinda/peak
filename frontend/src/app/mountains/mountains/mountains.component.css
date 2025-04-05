@@ -1,11 +1,11 @@
 .mountain-container {
     width: 100%;
     background: linear-gradient(to bottom,  
-        #FFFFFF 0%,    /* Soft white start */
-        #F4EBFF 30%,   /* Very pale lavender */
-        #E5D4FF 55%,   /* Gentle lavender */
-        #DAC6FF 75%,   /* Light lavender */
-        #B892FF 100%   /* Tropical Indigo as the final color */
+        #FFFFFF 0%,  
+        #F4EBFF 30%,
+        #E5D4FF 55%, 
+        #DAC6FF 75%, 
+        #B892FF 100%
 );
     position: relative;
 }

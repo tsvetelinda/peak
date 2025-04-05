@@ -497,6 +497,23 @@
                             </div>
                         </div>
                     </div>
+                    <!-- FORM -->
+                    <div>
+                        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                            <div>
+                              <label for="startDate">Start Date:</label>
+                              <input type="date" id="startDate" formControlName="startDate" required />
+                            </div>
+                          
+                            <div>
+                              <label for="endDate">End Date:</label>
+                              <input type="date" id="endDate" formControlName="endDate" required />
+                            </div>
+                          
+                            <button type="submit" [disabled]="form.invalid">Submit</button>
+                          </form>
+                    </div>
+                    <!-- END FORM -->
                 </div>
             </div>
             <div class="img-container">

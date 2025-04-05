@@ -1,0 +1,14 @@
+<section class="passes-container">
+    @for (pass of user.skiPasses; track $index) {
+        <div class="single-pass" [class]="isExpired(pass.endDate) ? 'expired' : ''">
+            <img class="pass-img" src="ski-pass.png" alt="Ski Pass">
+            <div class="pass-qr-data">
+                <img class="qr-code" [src]="pass.qrCodeData" alt="QR Code" />
+                <div class="pass-data">
+                    <p>{{pass.startDate | date:'dd/MM/yyyy'}} - {{pass.endDate | date:'dd/MM/yyyy'}}</p>
+                    <p>Възрастен</p>
+                </div>
+            </div>
+        </div>
+    }
+</section>

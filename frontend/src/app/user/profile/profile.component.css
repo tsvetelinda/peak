@@ -155,7 +155,8 @@
 }
 
 .edit-password-form,
-.edit-profile-form {
+.edit-profile-form,
+.show-passes-screen {
     opacity: 0;
     visibility: hidden;
     max-height: 0;
@@ -165,7 +166,8 @@
 }
 
 .profile-container.expanded .edit-password-form,
-.profile-container.expanded .edit-profile-form {
+.profile-container.expanded .edit-profile-form,
+.profile-container.expanded .show-passes-screen {
     width: 50%;
     max-width: 50%;
     max-height: 100%;

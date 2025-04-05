@@ -4,11 +4,12 @@ import { User } from '../../types/user';
 import { Router } from '@angular/router';
 import { EditPasswordComponent } from '../edit-password/edit-password.component';
 import { EditProfileComponent } from '../edit-profile/edit-profile.component';
+import { PassesComponent } from '../passes/passes.component';
 
 @Component({
   selector: 'app-profile',
   standalone: true,
-  imports: [EditPasswordComponent, EditProfileComponent],
+  imports: [EditPasswordComponent, EditProfileComponent, PassesComponent],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.css'
 })
@@ -20,6 +21,7 @@ export class ProfileComponent implements OnInit {
 
   isEditingPassword: boolean = false;
   isEditingProfile: boolean = false;
+  isShowingPasses: boolean = false;
 
   constructor(private userService: UserService, private router: Router) { }
 
@@ -68,8 +70,12 @@ export class ProfileComponent implements OnInit {
     this.isEditingProfile = false;
   }
 
-  showPasses() {
-    
+  toggleShowPasses() {
+    this.isShowingPasses = !this.isShowingPasses;
+  }
+
+  onPassesShown() {
+    this.isShowingPasses = false;
   }
 
   private setSkillIcon(skillLevel: string): void {

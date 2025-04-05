@@ -4,11 +4,14 @@ import { ApiService } from '../../api.service';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { RouterLink } from '@angular/router';
 import { LoaderComponent } from '../../core/loader/loader.component';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { UserService } from '../../user/user.service';
+import { User } from '../../types/user';
 
 @Component({
   selector: 'app-mountains',
   standalone: true, 
-  imports: [RouterLink, LoaderComponent], 
+  imports: [RouterLink, LoaderComponent, ReactiveFormsModule], 
   templateUrl: './mountains.component.html',
   styleUrl: './mountains.component.css',
   animations: [
@@ -32,12 +35,18 @@ import { LoaderComponent } from '../../core/loader/loader.component';
 })
 export class MountainsComponent implements OnInit {
   isLoading = true;
+  user: User | null = null;
 
   mountains: Mountain[] = [];
   slopesVisible: boolean = false;
   restaurantsVisible: boolean = false;
 
-  constructor(private apiService: ApiService) { }
+  form = new FormGroup({
+    startDate: new FormControl('', [Validators.required]),
+    endDate: new FormControl('', [Validators.required])
+  });
+
+  constructor(private apiService: ApiService, private userService: UserService) { }
 
   ngOnInit(): void {
     this.apiService.getMountains().subscribe(mountains => {
@@ -49,6 +58,35 @@ export class MountainsComponent implements OnInit {
         mountain.parkingVisible = false;
       });
       this.isLoading = false;
+    });
+
+    this.userService.getProfile().subscribe({
+      next: (profile) => {
+        this.user = profile;
+      },
+      error: (err) => {
+        console.log(err.error.message);
+      }
+    });
+  }
+
+  onSubmit() {
+    const startDate = new Date(this.form.value.startDate!);
+    const endDate = new Date(this.form.value.endDate!);
+
+    /* Validation for start date being after end date
+    if (newPassword !== reNewPassword) {
+      this.errorMsg = 'Паролите не съответстват!';
+      return;
+    }*/
+
+    this.userService.buySkiPass(this.user?._id, startDate!, endDate!).subscribe({
+      next: () => {
+        this.form.reset();
+      },
+      error: () => {
+        this.form.reset();
+      }
     });
   }
 
