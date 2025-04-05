@@ -3,6 +3,26 @@ const bcrypt = require('bcrypt');
 
 const SALT_ROUNDS = 10;
 
+const skiPassSchema = new mongoose.Schema({
+    startDate: {
+        type: Date,
+        required: true,
+    },
+    endDate: {
+        type: Date,
+        required: true,
+    },
+    priceRate: {
+        type: String,
+        required: true,
+        enum: ['Adult', 'Young', 'Elder'],
+    },
+    qrCodeData: {
+        type: String,
+        required: true,
+    }
+});
+
 const userSchema = new mongoose.Schema({
     firstName: {
         type: String,
@@ -39,7 +59,8 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
         enum: ['Beginner', 'Intermediate', 'Advanced'],
-    }
+    },
+    skiPasses: [skiPassSchema],
 });
 
 userSchema.pre('save', async function() {

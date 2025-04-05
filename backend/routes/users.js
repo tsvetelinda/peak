@@ -4,6 +4,8 @@ const isAuth = require('../middlewares/isAuth.js');
 const User = require('../models/User.js');
 const bcrypt = require('bcrypt');
 const jwt = require('../lib/jwt.js');
+const QRCode = require('qrcode');
+const { v4: uuidv4 } = require('uuid');
 
 const router = express.Router();
 
@@ -140,6 +142,38 @@ router.patch('/:id/change-password', async (req, res) => {
     await user.save();
 
     res.json(user);
+});
+
+router.post('/ski-pass/:id', async (req, res) => {
+  try {
+    const userId = req.params.id;
+    const { startDate, endDate, priceRate } = req.body;
+
+    const qrData = uuidv4();
+
+    const qrCodeString = await QRCode.toDataURL(qrData);
+
+    const newSkiPass = {
+      startDate,
+      endDate,
+      priceRate,
+      qrCodeData: qrCodeString,
+    };
+
+    const updatedUser = await User.findByIdAndUpdate(
+      userId,
+      { $push: { skiPasses: newSkiPass } },
+      { new: true }
+    );
+
+    if (!updatedUser) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    res.status(200).json(updatedUser);
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
 });
 
 async function generateToken(user) {
