@@ -105,10 +105,10 @@
 }
 
 .details .pass-container {
+    width: 50%;
     display: flex;
     justify-content: left;
     align-items: center;
-    margin-left: 30px;
 }
 
 .details .pass-container img {
@@ -122,6 +122,120 @@
     transform: scale(1.1) rotate(5deg);
 }
 
+.details .pass-container form {
+    width: 70%;
+    padding: 40px;
+    background-color: #FFF;
+    border-radius: 8px;
+    box-shadow: rgba(15, 20, 200, 0.55) 0px 13px 27px -5px, rgba(5, 10, 120, 0.75)  0px 8px 16px -8px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.pass-container form .prompt-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 2px solid #B892FF;
+}
+
+.pass-container form .prompt-message p {
+    width: 50%;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #0D14A1;
+}
+
+.pass-container form .prompt-message .mountain-icon {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pass-container form .prompt-message .mountain-icon img {
+    width: 100%;
+    height: auto;
+}
+
+.pass-container form .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.pass-container form label {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #0D14A1;
+}
+
+.pass-container form input {
+    width: 100%;
+    padding: 10px 5px;
+    border-radius: 0;
+    font-size: 1.2rem;
+    color: #131DE8;
+    transition: border 0.5s ease;
+    box-shadow: rgba(15, 20, 200, 0.35) 0px 6px 12px -4px, rgba(5, 10, 120, 0.5) 0px 4px 8px -6px;
+    font-family: "Sofia Sans", serif;
+}
+
+.regular-input {
+    border: 1px solid #131DE8;
+}
+
+form input:focus {
+    border: 1px solid #F58A07;
+    border-radius: 0;
+    outline: none;
+}
+
+.error {
+    color: #F58A07;
+    font-weight: 700;
+}
+
+.error-input {
+    border: 1px solid #F58A07;
+}
+
+.details .pass-container form .btns-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.pass-container form .btns-container button {
+    width: 80%;
+    padding: 10px 25px;
+    background-color: #131DE8;
+    color: #FFF;
+    border: 1px solid transparent;
+    font-family: "Sofia Sans", serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: background-color 0.5s ease-in-out, transform 0.5s ease-in-out;
+    text-shadow: 1px 1px 2px #000;
+    box-shadow: rgba(30, 60, 180, 0.8) 0px 13px 27px -5px, rgba(10, 20, 150, 0.4) 0px 8px 16px -8px;
+}
+
+.pass-container form .btns-container button:hover {
+    background-color: #FFF;
+    border: 1px solid #131DE8;
+    color: #131DE8;
+    text-shadow: none;
+    transform: scale(1.2);
+    font-weight: 500;
+}
+
 .info {
     width: 100%;
     font-size: 2rem;
@@ -132,7 +246,7 @@
 }
 
 .info-container .icons-container {
-    width: 70%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     gap: 20px;

@@ -41,6 +41,8 @@ export class MountainsComponent implements OnInit {
   slopesVisible: boolean = false;
   restaurantsVisible: boolean = false;
 
+  showForm: boolean = false;
+
   form = new FormGroup({
     startDate: new FormControl('', [Validators.required]),
     endDate: new FormControl('', [Validators.required])
@@ -70,9 +72,10 @@ export class MountainsComponent implements OnInit {
     });
   }
 
-  onSubmit() {
+  onSubmit(mountainName: string) {
     const startDate = new Date(this.form.value.startDate!);
     const endDate = new Date(this.form.value.endDate!);
+    const priceRate = this.setPriceRate();
 
     /* Validation for start date being after end date
     if (newPassword !== reNewPassword) {
@@ -80,14 +83,19 @@ export class MountainsComponent implements OnInit {
       return;
     }*/
 
-    this.userService.buySkiPass(this.user?._id, startDate!, endDate!).subscribe({
+    this.userService.buySkiPass(this.user?._id, startDate!, endDate!, mountainName!, priceRate!).subscribe({
       next: () => {
         this.form.reset();
+        this.showForm = false;
       },
       error: () => {
         this.form.reset();
       }
     });
+  }
+
+  toggleForm() {
+    this.showForm = !this.showForm;
   }
 
   toggleRestaurantsVisibility(index: number) {
@@ -104,5 +112,54 @@ export class MountainsComponent implements OnInit {
 
   toggleParkingVisibility(index: number) {
     this.mountains[index].parkingVisible = !this.mountains[index].parkingVisible;
+  }
+
+  setMountainIcon(mountainName: string): string {
+    switch (mountainName) {
+      case 'vitosha':
+        return 'icons/vitosha-icon.svg';
+      case 'rila':
+        return 'icons/rila-icon.svg';
+      case 'pirin':
+        return 'icons/pirin-icon.svg';
+      case 'rodopi':
+       return 'icons/rodopi-icon.svg';
+      default: return '';
+    }
+  }
+
+  setPriceRate() {
+    const age = this.calculateAge(this.user?.birthDate);
+    if (age <= 18) {
+      return 'Young';
+    } else if (age >= 60) {
+      return 'Elder';
+    } else {
+      return 'Adult';
+    }
+  }
+
+  private calculateAge(birthdate: Date | undefined): number {
+    if (birthdate == undefined) {
+      return 0;
+    }
+    const birthDate = new Date(birthdate);
+    const today = new Date();
+  
+    let age = today.getFullYear() - birthDate.getFullYear();
+    
+    const hasBirthdayPassed =
+      today.getMonth() > birthDate.getMonth() ||
+      (today.getMonth() === birthDate.getMonth() && today.getDate() >= birthDate.getDate());
+  
+    if (!hasBirthdayPassed) {
+      age--;
+    }
+  
+    return age;
+  } 
+
+  isFieldEmpty(controlName: string) {
+    return this.form.get(controlName)?.touched && this.form.get(controlName)?.errors?.['required'];
   }
 }

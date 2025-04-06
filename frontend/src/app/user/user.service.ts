@@ -51,8 +51,8 @@ export class UserService {
     .pipe(tap((user) => this.user$$.next(user)));
   }
 
-  buySkiPass(userId: string | undefined, startDate: Date, endDate: Date) {
-    return this.http.post<User>(`/api/users/${userId}/ski-pass`, { startDate, endDate })
+  buySkiPass(userId: string | undefined, startDate: Date, endDate: Date, mountain: string, priceRate: string) {
+    return this.http.post<User>(`/api/users/${userId}/ski-pass`, { startDate, endDate, mountain, priceRate })
     .pipe(tap((user) => this.user$$.next(user)));
   }
 }

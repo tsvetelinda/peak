@@ -497,12 +497,38 @@
                             </div>
                         </div>
                     </div>
-                    <!-- FORM -->
                      <div class="pass-container">
-                        <img src="ski-pass-cropped.png">
+                        @if (!showForm) {
+                            <img src="ski-pass-cropped.png" alt="A Ski Pass" (click)="toggleForm()">
+                        } @else {
+                            <form [formGroup]="form" (ngSubmit)="onSubmit(mountain.nameEnglish)">
+                                <div class="prompt-message">
+                                    <p>Карта за {{ mountain.mountainName }}</p>
+                                    <div class="mountain-icon">
+                                        <img [src]="setMountainIcon(mountain.nameEnglish)" [alt]="mountain.nameEnglish">
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                  <label for="startDate">Валидност от:</label>
+                                  <input type="date" id="startDate" [class]="isFieldEmpty('startDate') ? 'error-input' : 'regular-input'" formControlName="startDate" required />
+                                  @if (isFieldEmpty('startDate')) {
+                                        <p class="error">*Моля, въведете начална дата.</p>
+                                    }
+                                </div>
+                                <div class="input-group">
+                                  <label for="endDate">Валидност до:</label>
+                                  <input type="date" id="endDate" [class]="isFieldEmpty('endDate') ? 'error-input' : 'regular-input'" formControlName="endDate" required />
+                                  @if (isFieldEmpty('endDate')) {
+                                    <p class="error">*Моля, въведете крайна дата.</p>
+                                    }
+                                </div>
+                                <div class="btns-container">
+                                    <button type="submit" [disabled]="form.invalid">Купи карта</button>
+                                    <button type="button" (click)="toggleForm()">Откажи</button>
+                                </div>
+                            </form>
+                        }
                      </div>
-                    
-                    <!-- END FORM -->
                 </div>
             </div>
             <div class="img-container">
