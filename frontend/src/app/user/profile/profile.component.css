@@ -1,5 +1,6 @@
 .profile-container {
-    width: 35%;
+    width: 40%;
+    height: 75vh;
     background-color: rgba(255, 255, 255, 0.85);
     position: absolute;
     top: 155px;
@@ -28,7 +29,7 @@
 }
 
 .avatar-container {
-    width: 15rem;
+    width: 13rem;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -111,8 +112,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100px;
-    height: 100px;
+    width: 6rem;
+    height: 6rem;
     border-radius: 50%;
     background-color: #131DE8;
     transition: background-color 0.5s ease-in-out, transform 0.5s ease-in-out;
@@ -140,7 +141,7 @@
 }
 
 .btn-container button:hover .btn-title {
-    transform: translateX(-220%) translateY(-50%);
+    transform: translateX(-210%) translateY(-50%);
     opacity: 1;
 }
 
@@ -150,7 +151,7 @@
 }
 
 .btn-container .active .btn-title {
-    transform: translateX(-220%) translateY(-50%);
+    transform: translateX(-210%) translateY(-50%);
     opacity: 1;
 }
 

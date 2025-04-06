@@ -30,7 +30,7 @@
 .single-pass .pass-qr-data {
     width: 90%;
     position: absolute;
-    bottom: 30px;
+    bottom: 1rem;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -47,7 +47,7 @@
 .pass-qr-data .pass-data {
     color: #131DE8;
     font-weight: 800;
-    font-size: 1rem;
+    font-size: 0.8rem;
     text-align: center;
 }
 

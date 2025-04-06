@@ -105,15 +105,14 @@
 }
 
 .details .pass-container {
-    width: 50%;
+    width: 40%;
     display: flex;
-    justify-content: left;
+    justify-content: right;
     align-items: center;
 }
 
 .details .pass-container img {
-    width: auto;
-    height: 60%;
+    height: 50%;
     cursor: pointer;
     transition: transform 0.3s ease-in-out;;
 }
@@ -123,8 +122,8 @@
 }
 
 .details .pass-container form {
-    width: 70%;
-    padding: 40px;
+    width: 90%;
+    padding: 30px;
     background-color: #FFF;
     border-radius: 8px;
     box-shadow: rgba(15, 20, 200, 0.55) 0px 13px 27px -5px, rgba(5, 10, 120, 0.75)  0px 8px 16px -8px;
@@ -143,7 +142,7 @@
 
 .pass-container form .prompt-message p {
     width: 50%;
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-weight: 800;
     color: #0D14A1;
 }
@@ -168,7 +167,7 @@
 
 .pass-container form label {
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 800;
     color: #0D14A1;
 }
@@ -177,7 +176,7 @@
     width: 100%;
     padding: 10px 5px;
     border-radius: 0;
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #131DE8;
     transition: border 0.5s ease;
     box-shadow: rgba(15, 20, 200, 0.35) 0px 6px 12px -4px, rgba(5, 10, 120, 0.5) 0px 4px 8px -6px;
@@ -218,11 +217,12 @@ form input:focus {
     color: #FFF;
     border: 1px solid transparent;
     font-family: "Sofia Sans", serif;
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-weight: 500;
     cursor: pointer;
     border: 1px solid transparent;
     transition: background-color 0.5s ease-in-out, transform 0.5s ease-in-out;
+    text-align: center;
     text-shadow: 1px 1px 2px #000;
     box-shadow: rgba(30, 60, 180, 0.8) 0px 13px 27px -5px, rgba(10, 20, 150, 0.4) 0px 8px 16px -8px;
 }
@@ -256,7 +256,7 @@ form input:focus {
 
 .icons-container .icons-row {
     display: flex;
-    gap: 40px;
+    gap: 20px;
 }
 
 .icons-container .icon-with-title {
@@ -269,7 +269,7 @@ form input:focus {
 }
 
 .icon-with-title .title {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: #131DE8;
     font-weight: 700;
     transition: scale 0.5s ease-in-out;
