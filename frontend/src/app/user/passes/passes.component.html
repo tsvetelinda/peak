@@ -6,7 +6,7 @@
                 <img class="qr-code" [src]="pass.qrCodeData" alt="QR Code" />
                 <div class="pass-data">
                     <p>{{pass.startDate | date:'dd/MM/yyyy'}} - {{pass.endDate | date:'dd/MM/yyyy'}}</p>
-                    <p>Възрастен</p>
+                    <p>{{ setMountainName(pass.mountain) }} - {{ setPriceRate(pass.priceRate) }}</p>
                 </div>
             </div>
         </div>

@@ -21,6 +21,25 @@ export class PassesComponent implements OnInit {
     });
   }
 
+  setPriceRate(priceRate: string): string {
+    switch (priceRate) {
+      case 'Young': return 'Непълнолетен';
+      case 'Adult': return 'Възрастен';
+      case 'Elder': return 'Пенсионер';
+      default: return '';
+    }
+  }
+
+  setMountainName(mountain: string): string {
+    switch (mountain) {
+      case 'vitosha': return 'Витоша';
+      case 'rila': return 'Рила';
+      case 'pirin': return 'Пирин';
+      case 'rodopi': return 'Родопи';
+      default: return '';
+    }
+  }
+
   isExpired(endDate: Date): boolean {
     const today = new Date();
     endDate = new Date(endDate);
