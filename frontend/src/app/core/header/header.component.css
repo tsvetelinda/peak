@@ -52,3 +52,36 @@
     transform: scale(1.2);
     color: #131DE8;
 }
+
+@media (max-width: 450px) {
+    .nav-menu {
+        gap: 30px;
+        justify-content: center;
+        padding-top: 30px;
+    }
+    .nav-left,
+    .nav-right {
+        gap: 10px;
+    }
+
+    .nav-left {
+        padding-right: 0;
+    }
+    
+    .nav-right {
+        padding-left: 0;
+    }
+
+    .mountain-option {
+        gap: 0;
+    }
+
+    .mountain-option svg {
+        width: 70px;
+        height: auto;
+    }
+
+    .mountain-option h3 {
+        font-size: 1rem;
+    }
+}

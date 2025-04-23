@@ -163,3 +163,75 @@
     0%, 100% { transform: translateX(-162%); }
     50% { transform: translateX(-158%); }
 }
+
+@media (max-width: 450px) {
+    .welcome-msg {
+        padding: 20px;
+        top: 130px;
+        height: 75vh;
+        width: 80%;
+    }
+
+    .information {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .buttons-container {
+        width: 75%;
+        flex-direction: column;
+        gap: 10px;
+        padding: 5px;
+    }
+
+    .auth-prompt {
+        font-size: 1rem;
+    }
+
+    .larger {
+        font-size: 1.3rem;
+    }
+
+    .buttons-container button {
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    .img-container {
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        z-index: -1;
+    }
+
+    .img-container img {
+        width: auto;
+        height: 12rem;
+        opacity: 30%;
+    }
+
+    .speech-bubble {
+        top: -40%;
+        right: -35%;
+        transform: translateX(35%);
+        font-size: 13px;
+    }
+
+    .icon-container {
+        padding: 5px 10px;
+    }
+
+    .icon-container p {
+        font-size: 1rem;
+        font-weight: 700;
+    }
+
+    .icon-container svg {
+        width: 50px;
+        height: 50px;
+    }
+}
