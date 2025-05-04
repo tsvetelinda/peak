@@ -391,3 +391,91 @@ form input:focus {
 .list-container::-webkit-scrollbar-thumb:hover {
     background: #400040;
 }
+
+@media (max-width: 450px) {
+    .mountain-container .info-container {
+        flex-direction: column;
+        padding: 15px 5px;
+        gap: 5px;
+    }
+
+    .mountain-container .nav-container {
+        flex-direction: row;
+        gap: 30px;
+    }
+
+    .single-nav-wrapper .img-wrapper {
+        width: 60px;
+        height: 60px;
+    }
+
+    .single-nav-wrapper .img-wrapper svg {
+        width: 50px;
+        height: 50px;
+    }
+
+    .single-nav-wrapper p {
+        font-size: 1rem;
+    }
+
+    .info-container .logo-desc-wrapper {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .mountain-container .info-container .logo-container {
+        width: 60%;
+    }
+
+    .logo-desc-wrapper .logo-container img {
+        width: 100%;
+        height: auto;
+    }
+
+    .logo-desc-wrapper .info {
+        font-size: 1rem;
+    }
+
+    .details {
+        margin-top: 30px;
+        width: 100%;
+        gap: 10px;
+        justify-content: space-between;
+    }
+
+    .details .icons-container {
+        width: 50%;
+    }
+
+    .icons-container .icons-row {
+        gap: 5px;
+    }
+
+    .icon-with-title .title {
+        font-size: 1.2rem;
+    }
+
+    .icon-with-title .single-icon {
+        width: 70px;
+        height: 70px;
+    }
+
+    .icon-with-title .single-icon svg {
+        width: 40px;
+        height: 40px;
+    }
+
+    .details .pass-container {
+        width: 40%;
+        height: auto;
+        justify-content: right;
+        align-self: flex-end;
+    }
+
+    .details .pass-container img {
+        height: auto;
+        width: 100%;
+    }
+}
