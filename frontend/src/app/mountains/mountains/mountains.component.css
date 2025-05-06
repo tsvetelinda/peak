@@ -447,10 +447,17 @@ form input:focus {
 
     .details .icons-container {
         width: 50%;
+        position: relative;
+        z-index: 100;
     }
 
     .icons-container .icons-row {
-        gap: 5px;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .icons-row .icon-with-title {
+        width: 50%;
     }
 
     .icon-with-title .title {
@@ -477,5 +484,67 @@ form input:focus {
     .details .pass-container img {
         height: auto;
         width: 100%;
+    }
+
+    .details .pass-container form {
+        width: 100%;
+        padding: 10px;
+        gap: 15px;
+    }
+
+    .pass-container form .prompt-message p {
+        font-size: 0.9rem;
+        font-weight: 700;
+    }
+    
+    .pass-container form .prompt-message .mountain-icon {
+        width: 40%;
+    }
+
+    .pass-container form label {
+        font-size: 0.9rem;
+        font-weight: 700;
+    }
+    
+    .pass-container form input {
+        padding: 5px 2px;
+        font-size: 0.9rem;
+    }
+
+    .details .pass-container form .btns-container {
+        gap: 10px;
+    }
+    
+    .pass-container form .btns-container button {
+        width: 90%;
+        padding: 8px 15px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        box-shadow: rgba(15, 30, 90, 0.5) 0px 13px 27px -5px, rgba(10, 20, 150, 0.4) 0px 8px 16px -8px;
+    }
+
+    .list-container {
+        width: 250px;
+        height: 120px;
+        position: absolute;
+        top: -130%;
+        left: 60%;
+        transform: translateX(-20%);
+        padding: 10px;
+        z-index: 100;
+    }
+    
+    .row-info .slope-name {
+        font-size: 1rem;
+        font-weight: 600;
+    }
+    
+    .row-info .slope-details {
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+    
+    .single-row .availability-icon {
+        width: 20%;
     }
 }

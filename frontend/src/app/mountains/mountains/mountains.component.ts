@@ -20,12 +20,14 @@ import { User } from '../../types/user';
         'open',
         style({
           opacity: 1,
+          pointerEvents: 'auto',
         }),
       ),
       state(
         'closed',
         style({
           opacity: 0,
+          pointerEvents: 'none',
         }),
       ),
       transition('open => closed', [animate('1s')]),
@@ -99,7 +101,9 @@ export class MountainsComponent implements OnInit {
   }
 
   toggleRestaurantsVisibility(index: number) {
+    console.log('Before: ' + this.mountains[index].restaurantsVisible);
     this.mountains[index].restaurantsVisible = !this.mountains[index].restaurantsVisible;
+    console.log('After: ' + this.mountains[index].restaurantsVisible);
   }
 
   toggleSlopesVisibility(index: number) {
