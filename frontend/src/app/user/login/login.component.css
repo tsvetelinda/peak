@@ -163,7 +163,6 @@ form button:hover {
         height: 10rem;
     }
     
-    /* fix me */
     .speech-bubble {
         position: absolute;
         top: -25%;

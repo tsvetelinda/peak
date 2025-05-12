@@ -51,6 +51,7 @@ form input,
     color: #0D14A1;
     transition: border 0.5s ease;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    font-family: "Sofia Sans", serif;
 }
 
 form input:focus,
@@ -150,4 +151,48 @@ form button:hover {
 
 form button:enabled {
     cursor: pointer;
+}
+
+@media (max-width: 450px) {
+    .register-container {
+        width: 90%;
+        padding: 20px;
+        gap: 10px;
+        top: 100px;
+        max-height: 80vh;
+        overflow-y: auto; 
+    }
+
+    .register-container form {
+        gap: 10px;
+        width: 100%;
+    }
+
+    form .input-row {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    form label {
+        font-size: 1rem;
+        font-weight: 700;
+    }
+
+    form input,
+    #sport {
+        padding: 8px 5px;
+        font-size: 1rem;
+    }
+
+    #skill-level {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    form button {
+        padding: 8px 5px;
+        font-size: 1.1rem;
+    }
 }
