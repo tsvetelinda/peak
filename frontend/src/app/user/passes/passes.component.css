@@ -100,3 +100,25 @@
 .passes-container::-webkit-scrollbar-thumb:hover {
     background-color: #9E70E6;
 }
+
+@media (max-width: 450px) {
+    .passes-container {
+        gap: 20px;
+        padding-inline: 20px;
+        scroll-padding-inline: 20px;
+    }
+
+    .single-pass {
+        flex: 0 0 80%;        
+        aspect-ratio: 3 / 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .single-pass .pass-img {
+        width: 100%;
+        height: auto;
+        max-height: none;
+    }
+}
