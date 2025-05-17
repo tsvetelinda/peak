@@ -508,7 +508,14 @@
                                         <img [src]="setMountainIcon(mountain.nameEnglish)" [alt]="mountain.nameEnglish">
                                     </div>
                                 </div>
-                                <div class="input-group">
+                                @if (!user) {
+                                    <p class="auth-prompt">Моля, влезте в профила си, за да можете да закупите ски карта!</p>
+                                    <div class="auth-buttons-container">
+                                        <button (click)="navigateAndScroll('/login')">Влез в профил</button>
+                                        <button (click)="navigateAndScroll('/register')">Регистрирай се</button>
+                                    </div>
+                                } @else {
+                                    <div class="input-group">
                                   <label for="startDate">Валидност от:</label>
                                   <input type="date" id="startDate" [class]="isFieldEmpty('startDate') ? 'error-input' : 'regular-input'" formControlName="startDate" required />
                                   @if (isFieldEmpty('startDate')) {
@@ -522,10 +529,17 @@
                                     <p class="error">*Моля, въведете крайна дата.</p>
                                     }
                                 </div>
+                                
                                 <div class="btns-container">
+                                    @if (errorMsg != null) {
+                                        <p class="error">*{{ this.errorMsg }}</p>
+                                    } @else if (form.invalid && this.submitted) {
+                                        <p class="error">*Не забравяйте да попълните всички полета.</p>
+                                    }
                                     <button type="submit" [disabled]="form.invalid">Купи карта</button>
                                     <button type="button" (click)="toggleForm()">Откажи</button>
                                 </div>
+                                }
                             </form>
                         }
                      </div>

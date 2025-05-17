@@ -3,46 +3,69 @@
         <div class="input-row">
             <div class="input-group">
                 <label for="firstName">Име</label>
-                <input type="text" name="firstName" id="firstName" formControlName="firstName">
+                <input type="text" name="firstName" id="firstName" [class]="isFieldEmpty('firstName') ? 'error-input' : 'regular-input'" formControlName="firstName">
+                @if (isFieldEmpty('firstName')) {
+                    <p class="error">*Моля, въведете своето име.</p>
+                }
             </div>
             
             <div class="input-group">
                 <label for="lastName">Фамилия</label>
-                <input type="text" name="lastName" id="lastName" formControlName="lastName">
+                <input type="text" name="lastName" id="lastName" [class]="isFieldEmpty('lastName') ? 'error-input' : 'regular-input'" formControlName="lastName">
+                @if (isFieldEmpty('lastName')) {
+                    <p class="error">*Моля, въведете своята фамилия.</p>
+                }
             </div>
         </div>
         <div class="input-row">
             <div class="input-group">
                 <label for="email">Имейл</label>
-                <input type="email" name="email" id="email" formControlName="email">
+                <input type="email" name="email" id="email" [class]="isFieldEmpty('email') ? 'error-input' : 'regular-input'" formControlName="email">
+                @if (isFieldEmpty('email')) {
+                    <p class="error">*Моля, въведете своя имейл.</p>
+                }
             </div>
             <div class="input-group">
                 <label for="birthDate">Дата на раждане</label>
-                <input type="date" name="birthDate" id="birthDate" formControlName="birthDate">
+                <input type="date" name="birthDate" id="birthDate" [class]="isFieldEmpty('birthDate') ? 'error-input' : 'regular-input'" formControlName="birthDate">
+                @if (isFieldEmpty('birthDate')) {
+                    <p class="error">*Моля, въведете своята дата на раждане.</p>
+                }
             </div>
         </div>
         <div class="input-row">
             <div class="input-group">
                 <label for="password">Парола</label>
-                <input type="password" name="password" id="password" formControlName="password">
+                <input type="password" name="password" id="password" [class]="isFieldEmpty('password') ? 'error-input' : 'regular-input'" formControlName="password">
+                @if (isFieldEmpty('password')) {
+                    <p class="error">*Моля, въведете парола.</p>
+                }
             </div>
             <div class="input-group">
                 <label for="rePassword">Повторете паролата</label>
-                <input type="password" name="rePassword" id="rePassword" formControlName="rePassword">
+                <input type="password" name="rePassword" id="rePassword" [class]="isFieldEmpty('rePassword') ? 'error-input' : 'regular-input'" formControlName="rePassword">
+                @if (isFieldEmpty('rePassword')) {
+                    <p class="error">*Моля, повторете паролата си.</p>
+                }
             </div>
         </div>
         <div class="input-row">
             <div class="input-group">
                 <label for="phone">Телефонен номер</label>
-                <input type="text" name="phone" id="phone" formControlName="phone">
+                <input type="text" name="phone" id="phone" [class]="isFieldEmpty('phone') ? 'error-input' : 'regular-input'" formControlName="phone">
+                @if (isFieldEmpty('phone')) {
+                    <p class="error">*Моля, въведете телефонния си номер.</p>
+                }
             </div>
             <div class="input-group">
                 <label for="sport">Вие сте:</label>
-                <select id="sport" name="sport" formControlName="sport">
+                <select id="sport" name="sport" [class]="isFieldEmpty('phone') ? 'error-input' : 'regular-input'" formControlName="sport">
                     <option value="Skier">Скиор</option>
                     <option value="Snowboarder">Сноубордист</option>
-                    <option value="Both">И двете</option>
                 </select>
+                @if (isFieldEmpty('sport')) {
+                    <p class="error">*Моля, изберете практикуван спорт.</p>
+                }
             </div>
         </div>
         <div class="skill-wrapper">
@@ -237,9 +260,17 @@
                     </svg>                   
                     </span>Експерт 
                 </label>
+                @if (isFieldEmpty('skill-level')) {
+                    <p class="error">*Моля, изберете ниво на уменията си.</p>
+                }
             </div>
         </div>
 
-        <button [disabled]="form.invalid">Регистрирай ме!</button>
+        <button>Регистрирай ме!</button>
+        @if (errorMsg != null) {
+            <p class="error">*{{ this.errorMsg }}</p>
+        } @else if (form.invalid && this.submitted) {
+            <p class="error">*Не забравяйте да попълните всички полета.</p>
+        }
     </form>
 </section>

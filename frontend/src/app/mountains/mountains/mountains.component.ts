@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Mountain } from '../../types/mountain';
 import { ApiService } from '../../api.service';
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { LoaderComponent } from '../../core/loader/loader.component';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserService } from '../../user/user.service';
@@ -37,6 +37,8 @@ import { User } from '../../types/user';
 })
 export class MountainsComponent implements OnInit {
   isLoading = true;
+  errorMsg: string | null = null;
+  submitted: boolean = false;
   user: User | null = null;
 
   mountains: Mountain[] = [];
@@ -50,7 +52,7 @@ export class MountainsComponent implements OnInit {
     endDate: new FormControl('', [Validators.required])
   });
 
-  constructor(private apiService: ApiService, private userService: UserService) { }
+  constructor(private apiService: ApiService, private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
     this.apiService.getMountains().subscribe(mountains => {
@@ -74,16 +76,26 @@ export class MountainsComponent implements OnInit {
     });
   }
 
+  navigateAndScroll(route: string) {
+    this.router.navigate([route]).then(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
   onSubmit(mountainName: string) {
+    if (this.form.invalid) {
+      this.submitted = true;
+      return;
+    }
+
     const startDate = new Date(this.form.value.startDate!);
     const endDate = new Date(this.form.value.endDate!);
     const priceRate = this.setPriceRate();
 
-    /* Validation for start date being after end date
-    if (newPassword !== reNewPassword) {
-      this.errorMsg = 'Паролите не съответстват!';
+    if (endDate < startDate) {
+      this.errorMsg = 'Началната дата не може да бъде след крайната!';
       return;
-    }*/
+    }
 
     this.userService.buySkiPass(this.user?._id, startDate!, endDate!, mountainName!, priceRate!).subscribe({
       next: () => {

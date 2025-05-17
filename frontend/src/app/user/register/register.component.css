@@ -45,7 +45,6 @@ form label {
 form input,
 #sport {
     padding: 10px 5px;
-    border: 1px solid #0D14A1;
     border-radius: 0;
     font-size: 1.2rem;
     color: #0D14A1;
@@ -71,6 +70,10 @@ form input:focus,
     align-items: center;
     gap: 3rem;
     width: 100%;
+}
+
+.regular-input {
+    border: 1px solid #131DE8;
 }
 
 #skill-level {
@@ -153,6 +156,15 @@ form button:enabled {
     cursor: pointer;
 }
 
+.error {
+    color: #F58A07;
+    font-weight: 700;
+}
+
+.error-input {
+    border: 1px solid #F58A07;
+}
+
 @media (max-width: 450px) {
     .register-container {
         width: 90%;
@@ -194,5 +206,9 @@ form button:enabled {
     form button {
         padding: 8px 5px;
         font-size: 1.1rem;
+    }
+
+    .error {
+        font-size: 0.9rem;
     }
 }

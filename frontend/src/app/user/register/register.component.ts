@@ -11,6 +11,9 @@ import { Router } from '@angular/router';
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
+  errorMsg: string | null = null;
+  submitted: boolean = false;
+
   form = new FormGroup({
     firstName: new FormControl('', [Validators.required]),
     lastName: new FormControl('', [Validators.required]),
@@ -26,7 +29,10 @@ export class RegisterComponent {
   constructor(private userService: UserService, private router: Router) { }
 
   register() {
-    console.log(this.form.value);
+    if (this.form.invalid) {
+      this.submitted = true;
+      return;
+    }
 
     const { firstName, lastName, email, password, phone, sport, skillLevel } = this.form.value;
     const birthDate = new Date(this.form.value.birthDate!);
@@ -37,7 +43,12 @@ export class RegisterComponent {
       },
       error: (err) => {
         this.form.reset();
+        this.errorMsg = err.error.message;
       }
     });
+  }
+
+  isFieldEmpty(controlName: string) {
+    return this.form.get(controlName)?.touched && this.form.get(controlName)?.errors?.['required'];
   }
 }
