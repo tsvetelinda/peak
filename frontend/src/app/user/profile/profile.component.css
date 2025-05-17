@@ -187,3 +187,94 @@
 .profile-container.expanded .btn-container {
     width: 20%;
 }
+
+@media (max-width: 450px) {
+    .profile-container {
+        width: 90%;
+        max-height: 80vh;
+        top: 100px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        overflow-y: auto; /**/
+    }
+
+    .user-data {
+        width: 100%;
+        gap: 10px;
+    }
+
+    .avatar-container {
+        width: 8rem;
+    }
+
+    .personal-info {
+        padding: 10px;
+        gap: 5px;
+    }
+
+    .row-container p {
+        font-size: 1rem;
+    }
+
+    .btn-container {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        gap: 10px;
+        margin-top: 30px;
+    }
+
+    .btn-container button {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .btn-container button .btn-title {
+        right: 100%;
+        top: -10%;
+        font-weight: 700;
+        font-size: 0.7rem;
+        opacity: 0;
+    }
+
+    .btn-container button:hover .btn-title {
+        transform: translateX(100%) translateY(-100%);
+    }
+
+    .btn-container .active .btn-title {
+        transform: translateX(100%) translateY(-100%);
+    }
+
+    .profile-container.expanded {
+        height: 150%;
+        width: 90%;
+    }
+    
+    .profile-container.expanded .edit-password-form,
+    .profile-container.expanded .edit-profile-form,
+    .profile-container.expanded .show-passes-screen {
+        flex: 1 0 auto; 
+        width: 100%;
+        max-height: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .profile-container.expanded .user-data {
+        width: 100%; 
+    }
+
+    .profile-container.expanded .btn-container {
+        width: 100%;
+    }
+
+    button img {
+        width: 2.3rem;
+        height: 2.3rem;
+    }
+}
