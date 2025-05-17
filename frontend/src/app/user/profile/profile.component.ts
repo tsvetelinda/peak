@@ -18,6 +18,7 @@ export class ProfileComponent implements OnInit {
   skillIcon: string = '';
   ageGroup: string = '';
   avatarPath: string = '';
+  skillLevelTranslated: string = '';
 
   isEditingPassword: boolean = false;
   isEditingProfile: boolean = false;
@@ -82,12 +83,15 @@ export class ProfileComponent implements OnInit {
     switch (skillLevel) {
       case 'Beginner':
         this.skillIcon = 'icons/gloves.svg';
+        this.skillLevelTranslated = "Начинаещ";
         break;
       case 'Intermediate':
         this.skillIcon = 'icons/goggles.svg';
+        this.skillLevelTranslated = "Опитен";
         break;
       case 'Advanced':
         this.skillIcon = 'icons/boots.svg';
+        this.skillLevelTranslated = "Експерт";
         break;
     }
   }
@@ -95,11 +99,11 @@ export class ProfileComponent implements OnInit {
   private setAgeGroup(birthdate: Date): void {
     const age = this.calculateAge(birthdate);
     if (age <= 18) {
-      this.ageGroup = 'Young';
+      this.ageGroup = 'Младеж';
     } else if (age >= 60) {
-      this.ageGroup = 'Elder';
+      this.ageGroup = '60+';
     } else {
-      this.ageGroup = 'Adult';
+      this.ageGroup = 'Възрастен';
     }
   }
 

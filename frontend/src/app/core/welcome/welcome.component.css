@@ -170,6 +170,11 @@
         top: 130px;
         height: 75vh;
         width: 80%;
+        left: 60%;
+    }
+
+    .stay-center {
+        transform: translateX(-63%);
     }
 
     .information {
@@ -233,5 +238,10 @@
     .icon-container svg {
         width: 50px;
         height: 50px;
+    }
+
+    @keyframes pulseLeftRight {
+        0%, 100% { transform: translateX(-162%); }
+        50% { transform: translateX(-158%); }
     }
 }

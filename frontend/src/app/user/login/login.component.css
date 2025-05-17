@@ -189,6 +189,10 @@ form button:hover {
         font-weight: 800;
         color: #0D14A1;
     }
+
+    .error {
+        font-size: 0.9rem;
+    }
     
     form input {
         padding: 8px 5px;
