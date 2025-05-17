@@ -197,7 +197,7 @@
         display: flex;
         flex-direction: column;
         gap: 10px;
-        overflow-y: auto; /**/
+        overflow-y: auto;
     }
 
     .user-data {
@@ -258,7 +258,8 @@
     .profile-container.expanded .edit-profile-form,
     .profile-container.expanded .show-passes-screen {
         flex: 1 0 auto; 
-        width: 100%;
+        width: 80%;
+        max-width: 80%;
         max-height: none;
         display: flex;
         justify-content: center;
