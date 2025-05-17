@@ -1,3 +1,5 @@
+import { Accommodation } from "./accomodation";
+import { Parking } from "./parking";
 import { Restaurant } from "./restaurant";
 import { Slope } from "./slope";
 
@@ -9,6 +11,8 @@ export interface Mountain {
     "description": string;
     "slopes": Slope[];
     "restaurants": Restaurant[];
+    "parkings": Parking[];
+    "accomodation": Accommodation[];
     "restaurantsVisible": boolean;
     "slopesVisible": boolean;
     "hotelsVisible": boolean;

@@ -45,6 +45,34 @@ const mountainSchema = new mongoose.Schema({
             type: String
         }
     }],
+    accomodation: [{
+        accommodationName: {
+            type: String
+        },
+        accomodationType: {
+            type: String
+        },
+        nearestSlope: {
+            type: String
+        },
+        googleMapsLink: {
+            type: String
+        }
+    }],
+    parkings: [{
+        parkingName: {
+            type: String
+        },
+        nearestSlope: {
+            type: String
+        },
+        isFree: {
+            type: Boolean
+        },
+        googleMapsLink: {
+            type: String
+        }
+    }]
 });
 
 module.exports = mongoose.model('Mountain', mountainSchema);
