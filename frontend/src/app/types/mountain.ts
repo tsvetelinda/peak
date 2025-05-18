@@ -15,7 +15,7 @@ export interface Mountain {
     "accomodation": Accommodation[];
     "restaurantsVisible": boolean;
     "slopesVisible": boolean;
-    "hotelsVisible": boolean;
+    "accomodationVisible": boolean;
     "parkingVisible": boolean;
     "__v": number;
 }

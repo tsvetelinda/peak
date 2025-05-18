@@ -380,7 +380,7 @@
                         <div class="icons-row">
                             <div class="icon-with-title">
                                 <p class="title">Отседни</p>
-                                <div class="single-icon">
+                                <div class="single-icon" (click)="toggleAccomodationVisibility($index)">
                                     <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
              width="85" height="85" viewBox="0 0 512.000000 512.000000"
              preserveAspectRatio="xMidYMid meet">
@@ -440,10 +440,41 @@
             </g>
             </svg>
                                 </div>
+                                <div class="list-container" [@openClose]="mountain.accomodationVisible ? 'open' : 'closed'">
+                                    @for (accomodation of mountain.accomodation; track $index) {
+                                        <div class="single-row">
+                                            <div class="row-info">
+                                                <p class="slope-name">{{accomodation.accomodationName}}</p>
+                                                <p class="slope-details">{{accomodation.accomodationType}}</p>
+                                                <p class="slope-details">Най-близка писта: {{accomodation.nearestSlope}}</p>
+                                            </div>
+                                            <div class="availability-icon">
+                                                <a [href]="accomodation.googleMapsLink" target="_blank">
+                                                    <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+     width="40" height="40" viewBox="0 0 512.000000 512.000000"
+     preserveAspectRatio="xMidYMid meet">
+    
+    <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+    fill="#F58A07" stroke="none">
+    <path d="M2430 5114 c-229 -26 -360 -54 -508 -109 -392 -147 -720 -416 -943
+    -775 -210 -339 -307 -778 -259 -1170 78 -631 528 -1501 1274 -2465 176 -228
+    403 -501 455 -548 69 -62 153 -62 222 0 52 47 279 320 455 548 671 867 1102
+    1655 1238 2267 35 157 46 259 46 423 -1 480 -193 939 -540 1285 -286 287 -623
+    460 -1020 525 -94 15 -352 27 -420 19z m247 -925 c373 -50 682 -318 783 -679
+    27 -95 37 -286 21 -390 -47 -296 -241 -556 -516 -690 -162 -79 -328 -109 -497
+    -90 -132 15 -199 34 -313 90 -275 134 -469 394 -516 690 -16 104 -6 295 21
+    390 125 446 566 741 1017 679z"/>
+    </g>
+    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
                             </div>
                             <div class="icon-with-title">
                                 <p class="title">Паркирай</p>
-                                <div class="single-icon">
+                                <div class="single-icon" (click)="toggleParkingVisibility($index)">
                                     <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
              width="85" height="85" viewBox="0 0 512.000000 512.000000"
              preserveAspectRatio="xMidYMid meet">
@@ -493,6 +524,37 @@
             219 1 238 20 44 44 31 109 -26 130 -32 12 -401 12 -431 0z"/>
             </g>
             </svg>
+                                </div>
+                                <div class="list-container" [@openClose]="mountain.parkingVisible ? 'open' : 'closed'">
+                                    @for (parking of mountain.parkings; track $index) {
+                                        <div class="single-row">
+                                            <div class="row-info">
+                                                <p class="slope-name">{{parking.parkingName}}</p>
+                                                <p class="slope-details">{{parking.isFree ? "Безплатен" : "Платен"}}</p>
+                                                <p class="slope-details">Най-близка писта: {{parking.nearestSlope}}</p>
+                                            </div>
+                                            <div class="availability-icon">
+                                                <a [href]="parking.googleMapsLink" target="_blank">
+                                                    <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+     width="40" height="40" viewBox="0 0 512.000000 512.000000"
+     preserveAspectRatio="xMidYMid meet">
+    
+    <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+    fill="#F58A07" stroke="none">
+    <path d="M2430 5114 c-229 -26 -360 -54 -508 -109 -392 -147 -720 -416 -943
+    -775 -210 -339 -307 -778 -259 -1170 78 -631 528 -1501 1274 -2465 176 -228
+    403 -501 455 -548 69 -62 153 -62 222 0 52 47 279 320 455 548 671 867 1102
+    1655 1238 2267 35 157 46 259 46 423 -1 480 -193 939 -540 1285 -286 287 -623
+    460 -1020 525 -94 15 -352 27 -420 19z m247 -925 c373 -50 682 -318 783 -679
+    27 -95 37 -286 21 -390 -47 -296 -241 -556 -516 -690 -162 -79 -328 -109 -497
+    -90 -132 15 -199 34 -313 90 -275 134 -469 394 -516 690 -16 104 -6 295 21
+    390 125 446 566 741 1017 679z"/>
+    </g>
+    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    }
                                 </div>
                             </div>
                         </div>

@@ -42,8 +42,6 @@ export class MountainsComponent implements OnInit {
   user: User | null = null;
 
   mountains: Mountain[] = [];
-  slopesVisible: boolean = false;
-  restaurantsVisible: boolean = false;
 
   showForm: boolean = false;
 
@@ -58,10 +56,10 @@ export class MountainsComponent implements OnInit {
     this.apiService.getMountains().subscribe(mountains => {
       this.mountains = mountains;
       this.mountains.forEach(mountain => {
-        mountain.restaurantsVisible = false;
+        mountain.restaurantsVisible = false; 
         mountain.slopesVisible = false;
-        mountain.hotelsVisible = false;
-        mountain.parkingVisible = false;
+        mountain.accomodationVisible = false;
+        mountain.parkingVisible = false; 
       });
       this.isLoading = false;
     });
@@ -122,8 +120,8 @@ export class MountainsComponent implements OnInit {
     this.mountains[index].slopesVisible = !this.mountains[index].slopesVisible;
   }
 
-  toggleHotelsVisibility(index: number) {
-    this.mountains[index].hotelsVisible = !this.mountains[index].hotelsVisible;
+  toggleAccomodationVisibility(index: number) {
+    this.mountains[index].accomodationVisible = !this.mountains[index].accomodationVisible;
   }
 
   toggleParkingVisibility(index: number) {

@@ -46,7 +46,7 @@ const mountainSchema = new mongoose.Schema({
         }
     }],
     accomodation: [{
-        accommodationName: {
+        accomodationName: {
             type: String
         },
         accomodationType: {
