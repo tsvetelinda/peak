@@ -6,8 +6,6 @@
 
 ## Features
 
-**Disclaimer:** This project is an exciting work in progress, with more features and improvements on the way!
-
 - **Explore Bulgaria's Mountains**: Discover detailed information about Bulgaria's main mountains.
 - **Ski Slopes and Services**: View available ski slopes and nearby services to plan your trips.
 - **Ski Pass Management**: Purchase ski passes directly from the app and store them in your profile for easy access.
